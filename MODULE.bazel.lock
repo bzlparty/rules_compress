@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "54c616a6c082a7ee3851d21f48a961876cfc41c50037f28360cd32022899caa3",
+  "moduleFileHash": "968688154cc3dd839690d3edc2189689e10f735d1c4394bb414493d679016829",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -13,7 +13,8 @@
     "compatibilityMode": "ERROR"
   },
   "localOverrideHashes": {
-    "bazel_tools": "922ea6752dc9105de5af957f7a99a6933c0a6a712d23df6aad16a9c399f7e787"
+    "bazel_tools": "922ea6752dc9105de5af957f7a99a6933c0a6a712d23df6aad16a9c399f7e787",
+    "bzlparty_tools": "7b55a3fa07c7698da210f59546b6f2e07ed0c8c0c2b7083550ef182f3bc6f113"
   },
   "moduleDepGraph": {
     "<root>": {
@@ -22,11 +23,43 @@
       "key": "<root>",
       "repoName": "bzlparty_rules_compress",
       "executionPlatformsToRegister": [],
-      "toolchainsToRegister": [],
-      "extensionUsages": [],
+      "toolchainsToRegister": [
+        "@s2_toolchain//:all"
+      ],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@bzlparty_rules_compress//:extensions.bzl",
+          "extensionName": "toolchains",
+          "usingModule": "<root>",
+          "location": {
+            "file": "@@//:MODULE.bazel",
+            "line": 15,
+            "column": 42
+          },
+          "imports": {
+            "s2_toolchain": "s2_toolchain"
+          },
+          "devImports": [],
+          "tags": [
+            {
+              "tagName": "s2",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 16,
+                "column": 29
+              }
+            }
+          ],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
       "deps": {
         "bazel_skylib": "bazel_skylib@1.5.0",
         "aspect_bazel_lib": "aspect_bazel_lib@2.1.0",
+        "bzlparty_tools": "bzlparty_tools@_",
         "buildifier_prebuilt": "buildifier_prebuilt@6.4.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -212,6 +245,21 @@
           },
           "remote_patch_strip": 1
         }
+      }
+    },
+    "bzlparty_tools@_": {
+      "name": "bzlparty_tools",
+      "version": "0.0.0",
+      "key": "bzlparty_tools@_",
+      "repoName": "bzlparty_tools",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [],
+      "extensionUsages": [],
+      "deps": {
+        "bazel_skylib": "bazel_skylib@1.5.0",
+        "aspect_bazel_lib": "aspect_bazel_lib@2.1.0",
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
       }
     },
     "buildifier_prebuilt@6.4.0": {
@@ -856,6 +904,22 @@
     }
   },
   "moduleExtensions": {
+    "//:extensions.bzl%toolchains": {
+      "general": {
+        "bzlTransitiveDigest": "0SSwKt8AHt1MjIXfvIE3URXJDQvV1wGRvH6tQBt1+uU=",
+        "accumulatedFileDigests": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "s2_toolchain": {
+            "bzlFile": "@@//s2:toolchain.bzl",
+            "ruleClassName": "s2_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~s2_toolchain"
+            }
+          }
+        }
+      }
+    },
     "@@apple_support~1.5.0//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
         "bzlTransitiveDigest": "pMLFCYaRPkgXPQ8vtuNkMfiHfPmRBy6QJfnid4sWfv0=",
