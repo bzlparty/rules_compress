@@ -1,4 +1,4 @@
-# Bazel Rules for Files Compression
+# Bazel Rules for File Compression
 
 [![Test](https://github.com/bzlparty/rules_compress/actions/workflows/test.yaml/badge.svg?branch=main&event=push)](https://github.com/bzlparty/rules_compress/actions/workflows/test.yaml)
 
@@ -8,8 +8,16 @@ See install instructions on the [release page](https://github.com/bzlparty/rules
 
 ## Usage
 
+### S2
+
 ```
-@TODO
+load("@bzlparty_rules_compress//s2:defs.bzl", "s2_compress")
+
+s2_compress(
+    name = "archive",
+    src = ":some_file",
+    out = "some_archive.s2",
+)
 ```
 
 ## Development
