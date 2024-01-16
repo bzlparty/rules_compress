@@ -1,0 +1,11 @@
+"BUILD file template for a platform-sepecific toolchain"
+
+load("@bzlparty_rules_compress//s2:toolchain.bzl", "s2_toolchain")
+
+exports_files(["{executable}"], visibility = ["//visibility:public"])
+
+s2_toolchain(
+    name = "{name}_toolchain",
+    executable = "{executable}",
+    visibility = ["//visibility:public"],
+)

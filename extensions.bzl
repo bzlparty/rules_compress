@@ -1,6 +1,6 @@
 "Module Extensions"
 
-load("//s2:toolchain.bzl", "s2_platform_toolchains")
+load("//s2:repositories.bzl", "s2_platform_toolchains")
 
 def _toolchains_extension_impl(_):
     s2_platform_toolchains(name = "s2")

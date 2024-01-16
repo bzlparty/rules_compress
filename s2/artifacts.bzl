@@ -3,6 +3,8 @@
 https://github.com/klauspost/compress/releases/tag/v1.17.4
 """
 
+load("@bzlparty_tools//lib:platforms.bzl", _PLATFORMS = "PLATFORMS")
+
 ARTIFACTS = {
     "linux_amd64": ("s2-linux_amd64.tar.gz", "sha384-qjydEFa7DGnOkMlXH2xvfk9fnJwd/0nX9lVgg6RlakGFA1Of0y7VetWF0UkYxiZy"),
     "linux_arm64": ("s2-linux_arm64.tar.gz", "sha384-swUKxhNuqswI0K5uca4t8abQo9qUscuKs7PnDcE/kCppCrzxxNbu0LGF8f/+Isq+"),
@@ -12,6 +14,11 @@ ARTIFACTS = {
     "windows_arm64": ("s2-windows_arm64.zip", "sha384-xZTNluN4nE/B3WjA2Y/Upv/m+wXfo7SzXKZ6D647HB2BUM1+U3FiXWEt8s/KaCeB"),
     "darwin_amd64": ("s2-darwin_amd64.tar.gz", "sha384-iX7ntPEDjVqUBo1NoOyMADT80tnKczro0zk++z8Y3rMl4s1KNLz6gLbcYLaUv+z1"),
     "darwin_arm64": ("s2-darwin_arm64.tar.gz", "sha384-qRqAq59yVJk30Bq2KccSuf8PaxkYYDjUDwWhn+d3c7QpQO+pfZ7S3WHjG+sVQEh5"),
+}
+
+PLATFORMS = {
+    p: _PLATFORMS[p]
+    for p in ARTIFACTS.keys()
 }
 
 VERSION = "1.17.4"

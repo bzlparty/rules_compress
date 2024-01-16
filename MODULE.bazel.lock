@@ -906,12 +906,12 @@
   "moduleExtensions": {
     "//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "XKHFzQeSqaMJ9Z/epDbqfoNtWKBn2IELB3T50aURiXY=",
+        "bzlTransitiveDigest": "BEpgGpTSr3EfPItff0hC117+Z0KgDqxraLvqRPkPQHo=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
           "s2_toolchains": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchains_repo",
             "attributes": {
               "name": "_main~toolchains~s2_toolchains",
@@ -919,7 +919,7 @@
             }
           },
           "s2-freebsd_amd64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-freebsd_amd64",
@@ -928,7 +928,7 @@
             }
           },
           "s2-linux_arm64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-linux_arm64",
@@ -937,7 +937,7 @@
             }
           },
           "s2-windows_arm64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-windows_arm64",
@@ -946,7 +946,7 @@
             }
           },
           "s2-darwin_amd64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-darwin_amd64",
@@ -955,7 +955,7 @@
             }
           },
           "s2-freebsd_arm64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-freebsd_arm64",
@@ -964,7 +964,7 @@
             }
           },
           "s2-linux_amd64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-linux_amd64",
@@ -973,7 +973,7 @@
             }
           },
           "s2-darwin_arm64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-darwin_arm64",
@@ -982,7 +982,7 @@
             }
           },
           "s2-windows_amd64": {
-            "bzlFile": "@@//s2:toolchain.bzl",
+            "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-windows_amd64",

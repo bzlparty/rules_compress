@@ -6,7 +6,6 @@ bzl_library(
     visibility = ["//visibility:public"],
     deps = [
         ":s2_compress",
-        ":toolchain",
     ],
 )
 
@@ -15,6 +14,7 @@ bzl_library(
     srcs = [
         "s2_compress.bzl",
     ],
+    visibility = ["//visibility:private"],
 )
 
 bzl_library(
@@ -22,16 +22,36 @@ bzl_library(
     srcs = [
         "artifacts.bzl",
     ],
+    visibility = ["//visibility:private"],
+    deps = [
+        "@bzlparty_tools//lib:platforms",
+    ],
+)
+
+bzl_library(
+    name = "repositories",
+    srcs = ["repositories.bzl"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":artifacts",
+        ":utils",
+        "@bzlparty_tools//lib:github",
+    ],
+)
+
+bzl_library(
+    name = "utils",
+    srcs = ["utils.bzl"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "@aspect_bazel_lib//lib:repo_utils",
+    ],
 )
 
 bzl_library(
     name = "toolchain",
     srcs = ["toolchain.bzl"],
-    deps = [
-        ":artifacts",
-        "@aspect_bazel_lib//lib:repo_utils",
-        "@bzlparty_tools//lib:github",
-    ],
+    visibility = ["//visibility:public"],
 )
 
 toolchain_type(
