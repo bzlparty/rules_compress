@@ -9,18 +9,20 @@ S2FileInfo = provider(
     },
 )
 
-def _s2_comperess_impl(ctx):
-    toolchain = ctx.toolchains["@bzlparty_rules_compress//s2:toolchain_type"].s2_info
+def _s2_compress_impl(ctx):
+    toolchain = ctx.toolchains["@bzlparty_rules_compress//s2:s2c_toolchain_type"].s2_info
     args = ctx.actions.args()
     args.add("-o", ctx.outputs.out)
-    args.add("-slower")
+    args.add("-%s" % ctx.attr.mode)
     args.add("-q")
     args.add(ctx.file.src)
 
     ctx.actions.run(
         inputs = [ctx.file.src],
         outputs = [ctx.outputs.out],
-        executable = toolchain.s2c_binary,
+        executable = toolchain.executable,
+        mnemonic = "S2Compress",
+        progress_message = "Compress: %{input} > %{output}",
         arguments = [args],
     )
 
@@ -39,8 +41,13 @@ def _s2_comperess_impl(ctx):
     ]
 
 s2_compress = rule(
-    _s2_comperess_impl,
+    _s2_compress_impl,
     attrs = {
+        "mode": attr.string(
+            doc = "Either 'faster' or 'slower'",
+            default = "slower",
+            values = ["faster", "slower"],
+        ),
         "snappy": attr.bool(
             doc = "Generate Snappy compatible output",
             default = False,
@@ -55,5 +62,5 @@ s2_compress = rule(
             mandatory = True,
         ),
     },
-    toolchains = ["@bzlparty_rules_compress//s2:toolchain_type"],
+    toolchains = ["@bzlparty_rules_compress//s2:s2c_toolchain_type"],
 )

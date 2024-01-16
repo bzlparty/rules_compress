@@ -1,9 +1,9 @@
 "Module Extensions"
 
-load("//s2:toolchain.bzl", "s2_toolchain_repo")
+load("//s2:toolchain.bzl", "s2_platform_toolchains")
 
 def _toolchains_extension_impl(_):
-    s2_toolchain_repo(name = "s2_toolchain")
+    s2_platform_toolchains(name = "s2")
 
 toolchains = module_extension(
     _toolchains_extension_impl,

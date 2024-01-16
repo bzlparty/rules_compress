@@ -1,0 +1,21 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@bzlparty_rules_compress//s2:defs.bzl", "s2_compress")
+
+genrule(
+    name = "empty_file_gen",
+    outs = ["empty_file"],
+    cmd = "head -c 1MB </dev/urandom >$(OUTS)",
+)
+
+s2_compress(
+    name = "empty_file_compress",
+    src = ":empty_file",
+    out = "empty_file.s2",
+)
+
+build_test(
+    name = "empty_file_test",
+    targets = [
+        ":empty_file_compress",
+    ],
+)

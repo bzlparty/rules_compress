@@ -1,9 +1,9 @@
 "S2 Public API"
 
 load(":s2_compress.bzl", _S2FileInfo = "S2FileInfo", _s2_compress = "s2_compress")
-load(":toolchain.bzl", _S2BinaryInfo = "S2BinaryInfo")
+load(":toolchain.bzl", _S2Info = "S2Info")
 
-S2BinaryInfo = _S2BinaryInfo
+S2Info = _S2Info
 S2FileInfo = _S2FileInfo
 
 def s2_compress(name, out = None, **kwargs):
