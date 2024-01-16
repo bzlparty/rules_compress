@@ -30,6 +30,11 @@ toolchain(
     toolchain_type = "@bzlparty_rules_compress//s2:{name}_toolchain_type",
     visibility = ["//visibility:public"],
 )
+
+alias(
+  name = "{name}-{platform}",
+  actual = "@{prefix}-{platform}//:{name}",
+)
 """
 
 def _platform_binary_name(ctx, prefix):
