@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "e786fb90e5fa8bc0032198fc7607d8485e3056da21ef970579209f5e2ac62e07",
+  "moduleFileHash": "186237efa283659b67775b6f6a25949ede2cf504dd4aff55f2c7dc28b5191527",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -13,7 +13,7 @@
     "compatibilityMode": "ERROR"
   },
   "localOverrideHashes": {
-    "bzlparty_rules_compress": "a48b4fd3641b5b60575f4c1cec7aecd3ae73d226bc1616a78997d49f67cdf43a",
+    "bzlparty_rules_compress": "cc1f535d82c9cd064b49a1ffce1c0efb495e4f90fef13cd594f199166ac791f7",
     "bazel_tools": "922ea6752dc9105de5af957f7a99a6933c0a6a712d23df6aad16a9c399f7e787"
   },
   "moduleDepGraph": {

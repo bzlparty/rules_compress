@@ -5,7 +5,7 @@ bazel_dep(name = "bzlparty_tools")
 git_override(
     module_name = "bzlparty_tools",
     commit = "8c782edc08e7fdcd3fdc2d44a8798fef949bbf97",
-    remote = "git@github.com:bzlparty/tools.git",
+    remote = "https://github.com/bzlparty/tools.git",
 )
 
 bazel_dep(name = "bzlparty_rules_compress")
