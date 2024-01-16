@@ -1393,7 +1393,7 @@
     },
     "@@bzlparty_rules_compress~override//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "Su6O0X/JUskmLNC2+r0odfMDaRznK5ARg0N73/eJYiw=",
+        "bzlTransitiveDigest": "BEpgGpTSr3EfPItff0hC117+Z0KgDqxraLvqRPkPQHo=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {

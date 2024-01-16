@@ -1,0 +1,3 @@
+load(":s2_compress.bzl", "s2_compress_test_suite")
+
+s2_compress_test_suite()
