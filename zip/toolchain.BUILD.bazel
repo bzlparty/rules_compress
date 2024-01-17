@@ -1,0 +1,11 @@
+"BUILD file template for a platform-sepecific toolchain"
+
+load("@bzlparty_rules_compress//zip:toolchain.bzl", "zip_toolchain")
+
+exports_files(["EXECUTABLE"], visibility = ["//visibility:public"])
+
+zip_toolchain(
+    name = "zip_toolchain",
+    executable = "EXECUTABLE",
+    visibility = ["//visibility:public"],
+)

@@ -10,14 +10,15 @@ bazel_dep(name = "aspect_bazel_lib", version = "2.1.0")
 bazel_dep(name = "bzlparty_tools")
 git_override(
     module_name = "bzlparty_tools",
-    commit = "8c782edc08e7fdcd3fdc2d44a8798fef949bbf97",
+    commit = "e7afe45973e32cab4e2d4c8443090bfc07de5588",
     remote = "https://github.com/bzlparty/tools.git",
 )
 
 rules_compress_toolchains = use_extension("@bzlparty_rules_compress//:extensions.bzl", "toolchains")
 rules_compress_toolchains.s2()
-use_repo(rules_compress_toolchains, "s2_toolchains")
+rules_compress_toolchains.zip()
+use_repo(rules_compress_toolchains, "s2_toolchains", "zip_toolchains")
 
-register_toolchains("@s2_toolchains//:all")
+register_toolchains("@s2_toolchains//:all", "@zip_toolchains//:all")
 
 bazel_dep(name = "buildifier_prebuilt", version = "6.4.0", dev_dependency = True)

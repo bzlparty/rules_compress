@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "cc1f535d82c9cd064b49a1ffce1c0efb495e4f90fef13cd594f199166ac791f7",
+  "moduleFileHash": "9d3c604fe16f58109e2e8345c5925cc1d0aced647577638a4581f5ec7a018f8f",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -23,7 +23,8 @@
       "repoName": "bzlparty_rules_compress",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
-        "@s2_toolchains//:all"
+        "@s2_toolchains//:all",
+        "@zip_toolchains//:all"
       ],
       "extensionUsages": [
         {
@@ -36,7 +37,8 @@
             "column": 42
           },
           "imports": {
-            "s2_toolchains": "s2_toolchains"
+            "s2_toolchains": "s2_toolchains",
+            "zip_toolchains": "zip_toolchains"
           },
           "devImports": [],
           "tags": [
@@ -48,6 +50,16 @@
                 "file": "@@//:MODULE.bazel",
                 "line": 18,
                 "column": 29
+              }
+            },
+            {
+              "tagName": "zip",
+              "attributeValues": {},
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 19,
+                "column": 30
               }
             }
           ],
@@ -906,42 +918,16 @@
   "moduleExtensions": {
     "//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "BEpgGpTSr3EfPItff0hC117+Z0KgDqxraLvqRPkPQHo=",
+        "bzlTransitiveDigest": "D2PYTtmflzuPOOtMIfx6hQZ1b3CGwmcNS9JPnvmQLg8=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
-          "s2_toolchains": {
-            "bzlFile": "@@//s2:repositories.bzl",
-            "ruleClassName": "s2_toolchains_repo",
-            "attributes": {
-              "name": "_main~toolchains~s2_toolchains",
-              "build_file": "\ntoolchain(\n    name = \"s2c-linux_amd64_toolchain\",\n    toolchain = \"@s2-linux_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:linux\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-linux_amd64\",\n  actual = \"@s2-linux_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-linux_arm64_toolchain\",\n    toolchain = \"@s2-linux_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:linux\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-linux_arm64\",\n  actual = \"@s2-linux_arm64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-freebsd_amd64_toolchain\",\n    toolchain = \"@s2-freebsd_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:freebsd\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-freebsd_amd64\",\n  actual = \"@s2-freebsd_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-freebsd_arm64_toolchain\",\n    toolchain = \"@s2-freebsd_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:freebsd\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-freebsd_arm64\",\n  actual = \"@s2-freebsd_arm64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-windows_amd64_toolchain\",\n    toolchain = \"@s2-windows_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:windows\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-windows_amd64\",\n  actual = \"@s2-windows_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-windows_arm64_toolchain\",\n    toolchain = \"@s2-windows_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:windows\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-windows_arm64\",\n  actual = \"@s2-windows_arm64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-darwin_amd64_toolchain\",\n    toolchain = \"@s2-darwin_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:macos\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-darwin_amd64\",\n  actual = \"@s2-darwin_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-darwin_arm64_toolchain\",\n    toolchain = \"@s2-darwin_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:macos\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-darwin_arm64\",\n  actual = \"@s2-darwin_arm64//:s2c\",\n)\n"
-            }
-          },
           "s2-freebsd_amd64": {
             "bzlFile": "@@//s2:repositories.bzl",
             "ruleClassName": "s2_toolchain_repo",
             "attributes": {
               "name": "_main~toolchains~s2-freebsd_amd64",
               "platform": "freebsd_amd64",
-              "version": "1.17.4"
-            }
-          },
-          "s2-linux_arm64": {
-            "bzlFile": "@@//s2:repositories.bzl",
-            "ruleClassName": "s2_toolchain_repo",
-            "attributes": {
-              "name": "_main~toolchains~s2-linux_arm64",
-              "platform": "linux_arm64",
-              "version": "1.17.4"
-            }
-          },
-          "s2-windows_arm64": {
-            "bzlFile": "@@//s2:repositories.bzl",
-            "ruleClassName": "s2_toolchain_repo",
-            "attributes": {
-              "name": "_main~toolchains~s2-windows_arm64",
-              "platform": "windows_arm64",
               "version": "1.17.4"
             }
           },
@@ -972,13 +958,14 @@
               "version": "1.17.4"
             }
           },
-          "s2-darwin_arm64": {
-            "bzlFile": "@@//s2:repositories.bzl",
-            "ruleClassName": "s2_toolchain_repo",
+          "zip-linux_amd64": {
+            "bzlFile": "@@//zip:repositories.bzl",
+            "ruleClassName": "zip_toolchain_repo",
             "attributes": {
-              "name": "_main~toolchains~s2-darwin_arm64",
-              "platform": "darwin_arm64",
-              "version": "1.17.4"
+              "name": "_main~toolchains~zip-linux_amd64",
+              "platform": "linux_amd64",
+              "version": "23.01",
+              "executable": "7zz"
             }
           },
           "s2-windows_amd64": {
@@ -988,6 +975,79 @@
               "name": "_main~toolchains~s2-windows_amd64",
               "platform": "windows_amd64",
               "version": "1.17.4"
+            }
+          },
+          "s2_toolchains": {
+            "bzlFile": "@@//s2:repositories.bzl",
+            "ruleClassName": "s2_toolchains_repo",
+            "attributes": {
+              "name": "_main~toolchains~s2_toolchains",
+              "build_file": "\ntoolchain(\n    name = \"s2c-linux_amd64_toolchain\",\n    toolchain = \"@s2-linux_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:linux\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-linux_amd64\",\n  actual = \"@s2-linux_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-linux_arm64_toolchain\",\n    toolchain = \"@s2-linux_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:linux\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-linux_arm64\",\n  actual = \"@s2-linux_arm64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-freebsd_amd64_toolchain\",\n    toolchain = \"@s2-freebsd_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:freebsd\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-freebsd_amd64\",\n  actual = \"@s2-freebsd_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-freebsd_arm64_toolchain\",\n    toolchain = \"@s2-freebsd_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:freebsd\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-freebsd_arm64\",\n  actual = \"@s2-freebsd_arm64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-windows_amd64_toolchain\",\n    toolchain = \"@s2-windows_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:windows\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-windows_amd64\",\n  actual = \"@s2-windows_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-windows_arm64_toolchain\",\n    toolchain = \"@s2-windows_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:windows\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-windows_arm64\",\n  actual = \"@s2-windows_arm64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-darwin_amd64_toolchain\",\n    toolchain = \"@s2-darwin_amd64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:macos\", \"@platforms//cpu:x86_64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-darwin_amd64\",\n  actual = \"@s2-darwin_amd64//:s2c\",\n)\n\ntoolchain(\n    name = \"s2c-darwin_arm64_toolchain\",\n    toolchain = \"@s2-darwin_arm64//:s2c_toolchain\",\n    exec_compatible_with = [\"@platforms//os:macos\", \"@platforms//cpu:arm64\"],\n    toolchain_type = \"@bzlparty_rules_compress//s2:s2c_toolchain_type\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n  name = \"s2c-darwin_arm64\",\n  actual = \"@s2-darwin_arm64//:s2c\",\n)\n"
+            }
+          },
+          "s2-linux_arm64": {
+            "bzlFile": "@@//s2:repositories.bzl",
+            "ruleClassName": "s2_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~s2-linux_arm64",
+              "platform": "linux_arm64",
+              "version": "1.17.4"
+            }
+          },
+          "s2-windows_arm64": {
+            "bzlFile": "@@//s2:repositories.bzl",
+            "ruleClassName": "s2_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~s2-windows_arm64",
+              "platform": "windows_arm64",
+              "version": "1.17.4"
+            }
+          },
+          "zip-linux_arm64": {
+            "bzlFile": "@@//zip:repositories.bzl",
+            "ruleClassName": "zip_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~zip-linux_arm64",
+              "platform": "linux_arm64",
+              "version": "23.01",
+              "executable": "7zz"
+            }
+          },
+          "zip-darwin_amd64": {
+            "bzlFile": "@@//zip:repositories.bzl",
+            "ruleClassName": "zip_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~zip-darwin_amd64",
+              "platform": "darwin_amd64",
+              "version": "23.01",
+              "executable": "7zz"
+            }
+          },
+          "zip-darwin_arm64": {
+            "bzlFile": "@@//zip:repositories.bzl",
+            "ruleClassName": "zip_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~zip-darwin_arm64",
+              "platform": "darwin_arm64",
+              "version": "23.01",
+              "executable": "7zz"
+            }
+          },
+          "s2-darwin_arm64": {
+            "bzlFile": "@@//s2:repositories.bzl",
+            "ruleClassName": "s2_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~s2-darwin_arm64",
+              "platform": "darwin_arm64",
+              "version": "1.17.4"
+            }
+          },
+          "zip_toolchains": {
+            "bzlFile": "@@//zip:repositories.bzl",
+            "ruleClassName": "zip_toolchains_repo",
+            "attributes": {
+              "name": "_main~toolchains~zip_toolchains",
+              "executable": "7zz"
             }
           }
         }
