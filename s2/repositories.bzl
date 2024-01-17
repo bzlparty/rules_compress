@@ -33,7 +33,7 @@ def s2_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSION
 
 def _s2_toolchain_repo_impl(ctx):
     platform = ctx.attr.platform
-    version = ctx.attr.version
+    version = "v%s" % ctx.attr.version
     (asset, integrity) = ARTIFACTS[platform]
     gh = github(ctx, orga = "klauspost", project = "compress")
 

@@ -1405,7 +1405,7 @@
     },
     "@@bzlparty_rules_compress~override//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "D2PYTtmflzuPOOtMIfx6hQZ1b3CGwmcNS9JPnvmQLg8=",
+        "bzlTransitiveDigest": "BwsRtpRSPer7oo3ucIpG0REf5GOmQB6zNCbiGdZuSsE=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
