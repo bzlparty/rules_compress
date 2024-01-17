@@ -4,7 +4,7 @@ bazel_dep(name = "bazel_skylib", version = "1.5.0")
 bazel_dep(name = "bzlparty_tools")
 git_override(
     module_name = "bzlparty_tools",
-    commit = "8c782edc08e7fdcd3fdc2d44a8798fef949bbf97",
+    commit = "e7afe45973e32cab4e2d4c8443090bfc07de5588",
     remote = "https://github.com/bzlparty/tools.git",
 )
 

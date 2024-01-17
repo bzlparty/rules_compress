@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "186237efa283659b67775b6f6a25949ede2cf504dd4aff55f2c7dc28b5191527",
+  "moduleFileHash": "4efa072441ccfaee15f210a05335ce9b41bca3831080748934a3e3ceeaa03efb",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -1405,7 +1405,7 @@
     },
     "@@bzlparty_rules_compress~override//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "SAJ1raPaXmfekvTAp0YqquO28fJ1aInjrrfvCKh1rzU=",
+        "bzlTransitiveDigest": "D2PYTtmflzuPOOtMIfx6hQZ1b3CGwmcNS9JPnvmQLg8=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
