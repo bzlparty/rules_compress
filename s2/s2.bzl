@@ -9,7 +9,7 @@ S2FileInfo = provider(
     },
 )
 
-def _s2_compress_impl(ctx):
+def _s2c_impl(ctx):
     toolchain = ctx.toolchains["@bzlparty_rules_compress//s2:s2c_toolchain_type"].s2_info
     args = ctx.actions.args()
     args.add("-o", ctx.outputs.out)
@@ -40,8 +40,8 @@ def _s2_compress_impl(ctx):
         ),
     ]
 
-s2_compress = rule(
-    _s2_compress_impl,
+s2c = rule(
+    _s2c_impl,
     attrs = {
         "mode": attr.string(
             doc = "Either 'faster' or 'slower'",

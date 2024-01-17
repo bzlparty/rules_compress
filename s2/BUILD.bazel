@@ -5,14 +5,14 @@ bzl_library(
     srcs = ["defs.bzl"],
     visibility = ["//visibility:public"],
     deps = [
-        ":s2_compress",
+        ":s2",
     ],
 )
 
 bzl_library(
-    name = "s2_compress",
+    name = "s2",
     srcs = [
-        "s2_compress.bzl",
+        "s2.bzl",
     ],
     visibility = ["//visibility:private"],
 )
