@@ -1,8 +1,9 @@
 "Repositories"
 
 load("@bzlparty_tools//lib:github.bzl", "github")
+load("//utils:toolchain.bzl", "toolchain_build_file")
 load(":assets.bzl", "ASSETS", "PLATFORMS", "VERSION")
-load(":utils.bzl", "executable_target", "zip_toolchain_build_file")
+load(":utils.bzl", "executable_target")
 
 def zip_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSION):
     """Macro to prepare all toolchains
@@ -40,7 +41,7 @@ def _zip_toolchain_repo_impl(ctx):
     else:
         gh.download_archive(version, asset, integrity = integrity)
 
-    zip_toolchain_build_file(ctx, ctx.attr._build_file, substitutions = {
+    toolchain_build_file(ctx, substitutions = {
         "EXECUTABLE": executable,
     })
 
@@ -64,9 +65,8 @@ zip_toolchain_repo = repository_rule(
 
 def _zip_toolchains_repo(ctx):
     platform = "%s_%s" % (ctx.os.name, ctx.os.arch)
-    zip_toolchain_build_file(
+    toolchain_build_file(
         ctx,
-        ctx.attr._build_file,
         substitutions = {
             "EXECUTABLE": executable_target(ctx.attr.executable, platform),
             "HOST_PLATFORM": platform,

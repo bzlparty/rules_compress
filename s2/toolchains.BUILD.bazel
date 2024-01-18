@@ -1,0 +1,20 @@
+"BUILD file template for a combined toolchain that hosts all platform toolchains"
+
+load("@bzlparty_rules_compress//s2:assets.bzl", "PLATFORMS")
+load("@bzlparty_tools//platforms:host.bzl", "HOST_PLATFORM")
+
+[
+    toolchain(
+        name = "s2c-%s_toolchain" % platform,
+        toolchain = "@s2-%s//:s2c_toolchain" % platform,
+        exec_compatible_with = ecw,
+        toolchain_type = "@bzlparty_rules_compress//s2:s2c_toolchain_type",
+        visibility = ["//visibility:public"],
+    )
+    for (platform, ecw) in PLATFORMS.items()
+]
+
+alias(
+    name = "s2c",
+    actual = "@s2-%s//:EXECUTABLE" % HOST_PLATFORM,
+)

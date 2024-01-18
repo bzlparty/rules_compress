@@ -18,9 +18,9 @@ bzl_library(
 )
 
 bzl_library(
-    name = "artifacts",
+    name = "assets",
     srcs = [
-        "artifacts.bzl",
+        "assets.bzl",
     ],
     visibility = ["//visibility:private"],
     deps = [
@@ -33,7 +33,7 @@ bzl_library(
     srcs = ["repositories.bzl"],
     visibility = ["//visibility:public"],
     deps = [
-        ":artifacts",
+        ":assets",
         ":utils",
         "@bzlparty_tools//lib:github",
     ],
