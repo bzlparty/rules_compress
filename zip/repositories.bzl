@@ -1,6 +1,7 @@
 "Repositories"
 
 load("@bzlparty_tools//lib:github.bzl", "github")
+load("@bzlparty_tools//lib:platforms.bzl", "is_windows")
 load("//utils:toolchain.bzl", "toolchain_build_file")
 load(":assets.bzl", "ASSETS", "PLATFORMS", "VERSION")
 load(":utils.bzl", "executable_target")
@@ -26,9 +27,6 @@ def zip_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSIO
         executable = "7zz",
     )
 
-def _is_windows(platform):
-    return platform.startswith("windows")
-
 def _zip_toolchain_repo_impl(ctx):
     platform = ctx.attr.platform
     version = ctx.attr.version
@@ -36,7 +34,7 @@ def _zip_toolchain_repo_impl(ctx):
     (asset, integrity) = ASSETS[platform]
     gh = github(ctx, orga = "ip7z", project = "7zip")
 
-    if _is_windows(platform):
+    if is_windows(platform):
         gh.download_binary(version, asset, integrity = integrity, output = executable)
     else:
         gh.download_archive(version, asset, integrity = integrity)
