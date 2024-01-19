@@ -14,7 +14,12 @@ load("@bzlparty_tools//platforms:host.bzl", "HOST_PLATFORM")
     for (platform, ecw) in PLATFORMS.items()
 ]
 
+HOST_TOOLCHAIN = "@s2-%s//" % HOST_PLATFORM
+
 alias(
     name = "s2c",
-    actual = "@s2-%s//:EXECUTABLE" % HOST_PLATFORM,
+    actual = select({
+        "@bazel_tools//src/conditions:host_windows": "%s:s2c.exe" % HOST_TOOLCHAIN,
+        "//conditions:default": "%s:s2c" % HOST_TOOLCHAIN,
+    }),
 )

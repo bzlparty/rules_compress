@@ -34,24 +34,9 @@ bzl_library(
     visibility = ["//visibility:public"],
     deps = [
         ":assets",
-        ":utils",
+        "//utils:repositories",
         "@bzlparty_tools//lib:github",
     ],
-)
-
-bzl_library(
-    name = "utils",
-    srcs = ["utils.bzl"],
-    visibility = ["//visibility:private"],
-    deps = [
-        "@aspect_bazel_lib//lib:repo_utils",
-    ],
-)
-
-bzl_library(
-    name = "toolchain",
-    srcs = ["toolchain.bzl"],
-    visibility = ["//visibility:public"],
 )
 
 toolchain_type(

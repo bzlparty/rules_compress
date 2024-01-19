@@ -9,7 +9,7 @@ ZipFileInfo = provider(
 )
 
 def _zip_impl(ctx):
-    toolchain = ctx.toolchains["@bzlparty_rules_compress//zip:zip_toolchain_type"].zip_info
+    toolchain = ctx.toolchains["@bzlparty_rules_compress//zip:zip_toolchain_type"].compress_info
 
     if ctx.outputs.out.basename.endswith(".gz") and len(ctx.files.srcs) > 1:
         fail("gz can only compress a single file! %s files given" % len(ctx.files.srcs))

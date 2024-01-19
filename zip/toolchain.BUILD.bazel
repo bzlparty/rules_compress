@@ -1,11 +1,13 @@
 "BUILD file template for a platform-sepecific toolchain"
 
-load("@bzlparty_rules_compress//zip:toolchain.bzl", "zip_toolchain")
+load("@bzlparty_rules_compress//utils:toolchain.bzl", "compress_toolchain")
 
-exports_files(["EXECUTABLE"], visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
-zip_toolchain(
+compress_toolchain(
     name = "zip_toolchain",
-    executable = "EXECUTABLE",
-    visibility = ["//visibility:public"],
+    executable = select({
+        "@bazel_tools//src/conditions:host_windows": "7zz.exe",
+        "//conditions:default": "7zz",
+    }),
 )

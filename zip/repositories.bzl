@@ -2,9 +2,8 @@
 
 load("@bzlparty_tools//lib:github.bzl", "github")
 load("@bzlparty_tools//lib:platforms.bzl", "is_windows")
-load("//utils:toolchain.bzl", "toolchain_build_file")
+load("//utils:repositories.bzl", "combined_toolchains_repo", "compress_toolchain_repo")
 load(":assets.bzl", "ASSETS", "PLATFORMS", "VERSION")
-load(":utils.bzl", "executable_target")
 
 def zip_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSION):
     """Macro to prepare all toolchains
@@ -15,66 +14,30 @@ def zip_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSIO
       version: zip version
     """
     for platform in platforms:
-        zip_toolchain_repo(
+        _zip_toolchain_repo(
             name = "%s-%s" % (name, platform),
             platform = platform,
             version = version,
-            executable = executable_target("7zz", platform),
+            build_file = "//zip:toolchain.BUILD.bazel",
         )
 
-    zip_toolchains_repo(
+    combined_toolchains_repo(
         name = "%s_toolchains" % name,
-        executable = "7zz",
+        build_file = "//zip:toolchains.BUILD.bazel",
     )
 
 def _zip_toolchain_repo_impl(ctx):
     platform = ctx.attr.platform
     version = ctx.attr.version
-    executable = ctx.attr.executable
     (asset, integrity) = ASSETS[platform]
     gh = github(ctx, orga = "ip7z", project = "7zip")
 
     if is_windows(platform):
-        gh.download_binary(version, asset, integrity = integrity, output = executable)
+        gh.download_binary(version, asset, integrity = integrity, output = "7zz.exe")
     else:
         gh.download_archive(version, asset, integrity = integrity)
 
-    toolchain_build_file(ctx, substitutions = {
-        "EXECUTABLE": executable,
-    })
-
-zip_toolchain_repo = repository_rule(
-    _zip_toolchain_repo_impl,
-    attrs = {
-        "platform": attr.string(
-            values = PLATFORMS.keys(),
-            mandatory = True,
-        ),
-        "version": attr.string(
-            mandatory = True,
-        ),
-        "executable": attr.string(),
-        "_build_file": attr.label(
-            allow_single_file = True,
-            default = Label("//zip:toolchain.BUILD.bazel"),
-        ),
-    },
-)
-
-def _zip_toolchains_repo(ctx):
-    platform = "%s_%s" % (ctx.os.name, ctx.os.arch)
-    toolchain_build_file(
-        ctx,
-        substitutions = {
-            "EXECUTABLE": executable_target(ctx.attr.executable, platform),
-            "HOST_PLATFORM": platform,
-        },
-    )
-
-zip_toolchains_repo = repository_rule(
-    _zip_toolchains_repo,
-    attrs = {
-        "executable": attr.string(),
-        "_build_file": attr.label(default = Label("//zip:toolchains.BUILD.bazel")),
-    },
+_zip_toolchain_repo = repository_rule(
+    compress_toolchain_repo.implementor(_zip_toolchain_repo_impl),
+    attrs = compress_toolchain_repo.attrs,
 )

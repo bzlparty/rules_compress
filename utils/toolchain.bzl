@@ -1,6 +1,31 @@
 "Toolchain Utils"
 
-def toolchain_build_file(ctx, build_file = None, **kwargs):
-    if not build_file and ctx.attr._build_file:
-        build_file = ctx.attr._build_file
-    ctx.template("BUILD.bazel", build_file, executable = False, **kwargs)
+CompressToolchainInfo = provider(
+    doc = "Compressor Toolchain Provider",
+    fields = {
+        "executable": "Compressor executable",
+    },
+)
+
+def _compress_toolchain_impl(ctx):
+    executable = ctx.file.executable
+    default_info = DefaultInfo(
+        files = depset([executable]),
+        runfiles = ctx.runfiles(files = [executable]),
+    )
+    compress_info = CompressToolchainInfo(
+        executable = executable,
+    )
+    toolchain_info = platform_common.ToolchainInfo(
+        compress_info = compress_info,
+        default = default_info,
+    )
+
+    return [default_info, toolchain_info]
+
+compress_toolchain = rule(
+    _compress_toolchain_impl,
+    attrs = {
+        "executable": attr.label(allow_single_file = True),
+    },
+)

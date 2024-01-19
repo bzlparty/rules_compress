@@ -1,23 +1,25 @@
 "BUILD file template for a combined toolchain that hosts all platform toolchains"
 
 load("@bzlparty_rules_compress//zip:assets.bzl", "PLATFORMS")
-load("@bzlparty_rules_compress//zip:utils.bzl", "executable_target")
+load("@bzlparty_tools//platforms:host.bzl", "HOST_PLATFORM")
 
-[(
+[
     toolchain(
         name = "zip-%s_toolchain" % platform,
         toolchain = "@zip-%s//:zip_toolchain" % platform,
         exec_compatible_with = ecw,
         toolchain_type = "@bzlparty_rules_compress//zip:zip_toolchain_type",
         visibility = ["//visibility:public"],
-    ),
-    alias(
-        name = "zip-%s" % platform,
-        actual = "@zip-%s//:%s" % (platform, executable_target("EXECUTABLE", platform)),
-    ),
-) for (platform, ecw) in PLATFORMS.items()]
+    )
+    for (platform, ecw) in PLATFORMS.items()
+]
+
+HOST_TOOLCHAIN = "@zip-%s//" % HOST_PLATFORM
 
 alias(
-    name = "bin",
-    actual = "@zip-HOST_PLATFORM//:%s" % executable_target("EXECUTABLE", "HOST_PLATFORM"),
+    name = "7zz",
+    actual = select({
+        "@bazel_tools//src/conditions:host_windows": "%s:7zz.exe" % HOST_TOOLCHAIN,
+        "//conditions:default": "%s:7zz" % HOST_TOOLCHAIN,
+    }),
 )

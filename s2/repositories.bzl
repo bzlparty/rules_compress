@@ -1,7 +1,7 @@
 "Repositories"
 
 load("@bzlparty_tools//lib:github.bzl", "github")
-load("//utils:toolchain.bzl", "toolchain_build_file")
+load("//utils:repositories.bzl", "combined_toolchains_repo", "compress_toolchain_repo")
 load(":assets.bzl", "ASSETS", "PLATFORMS", "VERSION")
 
 def s2_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSION):
@@ -13,43 +13,25 @@ def s2_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSION
       version: s2 version
     """
     for platform in platforms:
-        s2_toolchain_repo(
+        _s2_toolchain_repo(
             name = "%s-%s" % (name, platform),
             platform = platform,
-            version = version,
+            version = "v" + version,
+            build_file = "//s2:toolchain.BUILD.bazel",
         )
 
-    s2_toolchains_repo(name = "%s_toolchains" % name)
+    combined_toolchains_repo(
+        name = "%s_toolchains" % name,
+        build_file = "//s2:toolchains.BUILD.bazel",
+    )
 
 def _s2_toolchain_repo_impl(ctx):
-    platform = ctx.attr.platform
-    version = "v%s" % ctx.attr.version
-    (asset, integrity) = ASSETS[platform]
     gh = github(ctx, orga = "klauspost", project = "compress")
+    (asset, integrity) = ASSETS[ctx.attr.platform]
 
-    gh.download_archive(version, asset, integrity = integrity)
+    gh.download_archive("v%s" % ctx.attr.version, asset, integrity = integrity)
 
-    toolchain_build_file(ctx, substitutions = {
-        "EXECUTABLE": "s2c",
-    })
-
-s2_toolchain_repo = repository_rule(
-    _s2_toolchain_repo_impl,
-    attrs = {
-        "platform": attr.string(values = PLATFORMS.keys(), mandatory = True),
-        "version": attr.string(mandatory = True),
-        "_build_file": attr.label(allow_single_file = True, default = Label("//s2:toolchain.BUILD.bazel")),
-    },
-)
-
-def _s2_toolchains_repo(ctx):
-    toolchain_build_file(ctx, substitutions = {
-        "EXECUTABLE": "s2c",
-    })
-
-s2_toolchains_repo = repository_rule(
-    _s2_toolchains_repo,
-    attrs = {
-        "_build_file": attr.label(default = "//s2:toolchains.BUILD.bazel"),
-    },
+_s2_toolchain_repo = repository_rule(
+    compress_toolchain_repo.implementor(_s2_toolchain_repo_impl),
+    attrs = compress_toolchain_repo.attrs,
 )
