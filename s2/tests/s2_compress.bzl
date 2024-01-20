@@ -38,7 +38,7 @@ def _s2_compress_snappy_output_test_impl(ctx):
 s2_compress_snappy_output_test = analysistest.make(_s2_compress_snappy_output_test_impl, expect_failure = True)
 
 # buildifier: disable=function-docstring
-def s2_compress_test_suite(name = "s2_compress_test_suite"):
+def s2_compress_test_suite(name):
     s2_compress_output_test(
         name = "s2_compress_output_test",
         target_under_test = ":test_file_compress",
@@ -75,4 +75,13 @@ def s2_compress_test_suite(name = "s2_compress_test_suite"):
         name = "test_file_compress_snappy",
         src = ":test_file",
         snappy = True,
+    )
+
+    native.test_suite(
+        name = name,
+        tests = [
+            ":s2_compress_auto_output_test",
+            ":s2_compress_output_test",
+            ":s2_compress_snappy_output_test",
+        ],
     )

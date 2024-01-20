@@ -18,3 +18,20 @@ buildifier_test(
     tags = ["manual"],
     workspace = "//:WORKSPACE",
 )
+
+test_suite(
+    name = "setup",
+    tags = ["manual"],
+    tests = [
+        ":lint",
+        "//s2/docs:update_tests",
+        "//zip/docs:update_tests",
+    ],
+)
+
+test_suite(
+    name = "packages",
+    tests = [
+        "//s2/tests",
+    ],
+)

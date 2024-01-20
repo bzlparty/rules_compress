@@ -919,7 +919,7 @@
   "moduleExtensions": {
     "//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "EwO+PR6cORqALamTb9dnJ/iyM/PM7LO/w31ddMaAeIM=",
+        "bzlTransitiveDigest": "tKvR4WM8x/P01QquZ8B4zwvv5VH6jYuscEX9hm9dxIM=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -930,7 +930,7 @@
               "name": "_main~toolchains~s2-freebsd_amd64",
               "platform": "freebsd_amd64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-darwin_amd64": {
@@ -940,7 +940,7 @@
               "name": "_main~toolchains~s2-darwin_amd64",
               "platform": "darwin_amd64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-freebsd_arm64": {
@@ -950,7 +950,7 @@
               "name": "_main~toolchains~s2-freebsd_arm64",
               "platform": "freebsd_arm64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-linux_amd64": {
@@ -960,7 +960,7 @@
               "name": "_main~toolchains~s2-linux_amd64",
               "platform": "linux_amd64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "zip-linux_amd64": {
@@ -970,7 +970,7 @@
               "name": "_main~toolchains~zip-linux_amd64",
               "platform": "linux_amd64",
               "version": "23.01",
-              "build_file": "@@//zip:toolchain.BUILD.bazel"
+              "build_file": "@@//zip/private:toolchain.BUILD.bazel"
             }
           },
           "s2-windows_amd64": {
@@ -980,7 +980,7 @@
               "name": "_main~toolchains~s2-windows_amd64",
               "platform": "windows_amd64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2_toolchains": {
@@ -988,7 +988,7 @@
             "ruleClassName": "combined_toolchains_repo",
             "attributes": {
               "name": "_main~toolchains~s2_toolchains",
-              "build_file": "@@//s2:toolchains.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchains.BUILD.bazel"
             }
           },
           "s2-linux_arm64": {
@@ -998,7 +998,7 @@
               "name": "_main~toolchains~s2-linux_arm64",
               "platform": "linux_arm64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-windows_arm64": {
@@ -1008,7 +1008,7 @@
               "name": "_main~toolchains~s2-windows_arm64",
               "platform": "windows_arm64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "zip-linux_arm64": {
@@ -1018,7 +1018,7 @@
               "name": "_main~toolchains~zip-linux_arm64",
               "platform": "linux_arm64",
               "version": "23.01",
-              "build_file": "@@//zip:toolchain.BUILD.bazel"
+              "build_file": "@@//zip/private:toolchain.BUILD.bazel"
             }
           },
           "zip-darwin_amd64": {
@@ -1028,7 +1028,7 @@
               "name": "_main~toolchains~zip-darwin_amd64",
               "platform": "darwin_amd64",
               "version": "23.01",
-              "build_file": "@@//zip:toolchain.BUILD.bazel"
+              "build_file": "@@//zip/private:toolchain.BUILD.bazel"
             }
           },
           "zip-darwin_arm64": {
@@ -1038,7 +1038,7 @@
               "name": "_main~toolchains~zip-darwin_arm64",
               "platform": "darwin_arm64",
               "version": "23.01",
-              "build_file": "@@//zip:toolchain.BUILD.bazel"
+              "build_file": "@@//zip/private:toolchain.BUILD.bazel"
             }
           },
           "s2-darwin_arm64": {
@@ -1048,7 +1048,7 @@
               "name": "_main~toolchains~s2-darwin_arm64",
               "platform": "darwin_arm64",
               "version": "v1.17.4",
-              "build_file": "@@//s2:toolchain.BUILD.bazel"
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
           "zip_toolchains": {
@@ -1056,7 +1056,7 @@
             "ruleClassName": "combined_toolchains_repo",
             "attributes": {
               "name": "_main~toolchains~zip_toolchains",
-              "build_file": "@@//zip:toolchains.BUILD.bazel"
+              "build_file": "@@//zip/private:toolchains.BUILD.bazel"
             }
           }
         }

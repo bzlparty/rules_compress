@@ -1406,7 +1406,7 @@
     },
     "@@bzlparty_rules_compress~override//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "EwO+PR6cORqALamTb9dnJ/iyM/PM7LO/w31ddMaAeIM=",
+        "bzlTransitiveDigest": "tKvR4WM8x/P01QquZ8B4zwvv5VH6jYuscEX9hm9dxIM=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -1417,7 +1417,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-freebsd_amd64",
               "platform": "freebsd_amd64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-darwin_amd64": {
@@ -1427,7 +1427,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-darwin_amd64",
               "platform": "darwin_amd64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-freebsd_arm64": {
@@ -1437,7 +1437,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-freebsd_arm64",
               "platform": "freebsd_arm64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-linux_amd64": {
@@ -1447,7 +1447,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-linux_amd64",
               "platform": "linux_amd64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "zip-linux_amd64": {
@@ -1457,7 +1457,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~zip-linux_amd64",
               "platform": "linux_amd64",
               "version": "23.01",
-              "build_file": "@@bzlparty_rules_compress~override//zip:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//zip/private:toolchain.BUILD.bazel"
             }
           },
           "s2-windows_amd64": {
@@ -1467,7 +1467,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-windows_amd64",
               "platform": "windows_amd64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2_toolchains": {
@@ -1475,7 +1475,7 @@
             "ruleClassName": "combined_toolchains_repo",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_toolchains",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchains.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchains.BUILD.bazel"
             }
           },
           "s2-linux_arm64": {
@@ -1485,7 +1485,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-linux_arm64",
               "platform": "linux_arm64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "s2-windows_arm64": {
@@ -1495,7 +1495,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-windows_arm64",
               "platform": "windows_arm64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "zip-linux_arm64": {
@@ -1505,7 +1505,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~zip-linux_arm64",
               "platform": "linux_arm64",
               "version": "23.01",
-              "build_file": "@@bzlparty_rules_compress~override//zip:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//zip/private:toolchain.BUILD.bazel"
             }
           },
           "zip-darwin_amd64": {
@@ -1515,7 +1515,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~zip-darwin_amd64",
               "platform": "darwin_amd64",
               "version": "23.01",
-              "build_file": "@@bzlparty_rules_compress~override//zip:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//zip/private:toolchain.BUILD.bazel"
             }
           },
           "zip-darwin_arm64": {
@@ -1525,7 +1525,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~zip-darwin_arm64",
               "platform": "darwin_arm64",
               "version": "23.01",
-              "build_file": "@@bzlparty_rules_compress~override//zip:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//zip/private:toolchain.BUILD.bazel"
             }
           },
           "s2-darwin_arm64": {
@@ -1535,7 +1535,7 @@
               "name": "bzlparty_rules_compress~override~toolchains~s2-darwin_arm64",
               "platform": "darwin_arm64",
               "version": "v1.17.4",
-              "build_file": "@@bzlparty_rules_compress~override//s2:toolchain.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }
           },
           "zip_toolchains": {
@@ -1543,7 +1543,7 @@
             "ruleClassName": "combined_toolchains_repo",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~zip_toolchains",
-              "build_file": "@@bzlparty_rules_compress~override//zip:toolchains.BUILD.bazel"
+              "build_file": "@@bzlparty_rules_compress~override//zip/private:toolchains.BUILD.bazel"
             }
           }
         }

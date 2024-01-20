@@ -1,3 +1,8 @@
 load(":s2_compress.bzl", "s2_compress_test_suite")
 
-s2_compress_test_suite()
+s2_compress_test_suite(name = "s2_compress_test_suite")
+
+test_suite(
+    name = "tests",
+    tests = [":s2_compress_test_suite"],
+)
