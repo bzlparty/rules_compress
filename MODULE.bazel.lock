@@ -919,7 +919,7 @@
   "moduleExtensions": {
     "//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "tKvR4WM8x/P01QquZ8B4zwvv5VH6jYuscEX9hm9dxIM=",
+        "bzlTransitiveDigest": "EDrkPB1oAUhHjj9fBma+LUJxPPYvGNyYJAImTBXg22I=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {

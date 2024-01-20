@@ -29,7 +29,7 @@ def _s2_toolchain_repo_impl(ctx):
     gh = github(ctx, orga = "klauspost", project = "compress")
     (asset, integrity) = ASSETS[ctx.attr.platform]
 
-    gh.download_archive("v%s" % ctx.attr.version, asset, integrity = integrity)
+    gh.download_archive(ctx.attr.version, asset, integrity = integrity)
 
 _s2_toolchain_repo = repository_rule(
     compress_toolchain_repo.implementor(_s2_toolchain_repo_impl),
