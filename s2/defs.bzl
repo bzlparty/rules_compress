@@ -1,6 +1,6 @@
 "S2 Public API"
 
-load(":s2.bzl", _S2FileInfo = "S2FileInfo", _s2c = "s2c")
+load("//s2/private:s2.bzl", _S2FileInfo = "S2FileInfo", _s2c = "s2c")
 
 S2FileInfo = _S2FileInfo
 

@@ -1,0 +1,11 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+
+package(default_visibility = ["//visibility:private"])
+
+bzl_library(
+    name = "s2",
+    srcs = [
+        "s2.bzl",
+    ],
+    visibility = ["//s2:__pkg__"],
+)

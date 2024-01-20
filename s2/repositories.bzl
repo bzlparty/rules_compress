@@ -17,12 +17,12 @@ def s2_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSION
             name = "%s-%s" % (name, platform),
             platform = platform,
             version = "v" + version,
-            build_file = "//s2:toolchain.BUILD.bazel",
+            build_file = "//s2/private:toolchain.BUILD.bazel",
         )
 
     combined_toolchains_repo(
         name = "%s_toolchains" % name,
-        build_file = "//s2:toolchains.BUILD.bazel",
+        build_file = "//s2/private:toolchains.BUILD.bazel",
     )
 
 def _s2_toolchain_repo_impl(ctx):
