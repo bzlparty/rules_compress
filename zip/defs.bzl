@@ -1,6 +1,6 @@
 "Zip Public API"
 
-load(":zip.bzl", _zip = "zip")
+load("//zip/private:zip.bzl", _zip = "zip")
 
 zip = _zip
 

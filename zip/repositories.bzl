@@ -18,12 +18,12 @@ def zip_platform_toolchains(name, platforms = PLATFORMS.keys(), version = VERSIO
             name = "%s-%s" % (name, platform),
             platform = platform,
             version = version,
-            build_file = "//zip:toolchain.BUILD.bazel",
+            build_file = "//zip/private:toolchain.BUILD.bazel",
         )
 
     combined_toolchains_repo(
         name = "%s_toolchains" % name,
-        build_file = "//zip:toolchains.BUILD.bazel",
+        build_file = "//zip/private:toolchains.BUILD.bazel",
     )
 
 def _zip_toolchain_repo_impl(ctx):
