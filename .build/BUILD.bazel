@@ -1,0 +1,49 @@
+load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
+load(":patched_file.bzl", "patched_file")
+
+patched_file(
+    name = "module_bazel_patched",
+    src = "//:MODULE.bazel",
+    patch = "module_bazel.patch",
+)
+
+patched_file(
+    name = "s2_build_bazel_patched",
+    src = "//s2:BUILD.bazel",
+    out = "s2.BUILD.bazel.patched",
+    patch = "s2_build_bazel.patch",
+)
+
+patched_file(
+    name = "zip_build_bazel_patched",
+    src = "//zip:BUILD.bazel",
+    out = "zip.BUILD.bazel.patched",
+    patch = "zip_build_bazel.patch",
+)
+
+diff_test(
+    name = "module_bazel_test",
+    file1 = "MODULE.bazel",
+    file2 = "module_bazel_patched",
+)
+
+diff_test(
+    name = "s2_build_bazel_test",
+    file1 = "s2.BUILD.bazel",
+    file2 = "s2_build_bazel_patched",
+)
+
+diff_test(
+    name = "zip_build_bazel_test",
+    file1 = "zip.BUILD.bazel",
+    file2 = "zip_build_bazel_patched",
+)
+
+test_suite(
+    name = "tests",
+    tests = [
+        "module_bazel_test",
+        "s2_build_bazel_test",
+        "zip_build_bazel_test",
+    ],
+)

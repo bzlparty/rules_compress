@@ -1,0 +1,2 @@
+# buildifier: disable=module-docstring
+package(default_visibility = ["//visibility:public"])

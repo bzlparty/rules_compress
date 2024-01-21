@@ -8,7 +8,17 @@ PREFIX="${NAME}-${VERSION}"
 RULES_ARCHIVE="${NAME}-${TAG}.tar.gz"
 
 echo -n "build: Create Rules Archive"
-git archive --format=tar --prefix=${PREFIX}/ ${TAG} | gzip >$RULES_ARCHIVE
+build_dir=.build
+git archive \
+  --add-virtual-file=${PREFIX}/BUILD.bazel:"$(cat ${build_dir}/public.BUILD.bazel)" \
+  --add-virtual-file=${PREFIX}/MODULE.bazel:"$(sed "s/VERSION/${VERSION}/" ${build_dir}/MODULE.bazel)" \
+  --add-virtual-file=${PREFIX}/s2/BUILD.bazel:"$(cat ${build_dir}/s2.BUILD.bazel)" \
+  --add-virtual-file=${PREFIX}/s2/private/BUILD.bazel:"$(cat ${build_dir}/private.BUILD.bazel)" \
+  --add-virtual-file=${PREFIX}/zip/BUILD.bazel:"$(cat ${build_dir}/zip.BUILD.bazel)" \
+  --add-virtual-file=${PREFIX}/zip/private/BUILD.bazel:"$(cat ${build_dir}/private.BUILD.bazel)" \
+  --add-virtual-file=${PREFIX}/utils/BUILD.bazel:"$(cat ${build_dir}/public.BUILD.bazel)" \
+  --format=tar \
+  --prefix=${PREFIX}/ ${TAG} | gzip >$RULES_ARCHIVE
 RULES_SHA=$(shasum -a 256 $RULES_ARCHIVE | awk '{print $1}')
 echo " ... done ($RULES_ARCHIVE: $RULES_SHA)"
 
