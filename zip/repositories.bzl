@@ -1,7 +1,7 @@
 "Repositories"
 
 load("@bzlparty_tools//lib:github.bzl", "github")
-load("@bzlparty_tools//lib:platforms.bzl", "is_windows")
+load("@bzlparty_tools//lib:platforms.bzl", "is_netbsd", "is_windows")
 load("//utils:repositories.bzl", "combined_toolchains_repo", "compress_toolchain_repo")
 load(":assets.bzl", "ASSETS", "PLATFORMS", "VERSION")
 
@@ -34,6 +34,11 @@ def _zip_toolchain_repo_impl(ctx):
 
     if is_windows(platform):
         gh.download_binary(version, asset, integrity = integrity, output = "7zz.exe")
+    elif is_netbsd(platform):
+        ctx.download_and_extract(
+            url = "http://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/x86_64/10.0/All/%s" % asset,
+        )
+        ctx.symlink("bin/7zz", "7zz")
     else:
         gh.download_archive(version, asset, integrity = integrity)
 

@@ -919,7 +919,7 @@
   "moduleExtensions": {
     "//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "S3bYNo++orFprlH63EP+x4KoU6uycPJhP/XQi6hOoJo=",
+        "bzlTransitiveDigest": "fNnIixc22euo+yjPiTl+NeLDaWlscplrM8u7HZIBfPE=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -931,6 +931,16 @@
               "platform": "freebsd_amd64",
               "version": "v1.17.4",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
+            }
+          },
+          "zip-netbsd_amd64": {
+            "bzlFile": "@@//zip:repositories.bzl",
+            "ruleClassName": "_zip_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~zip-netbsd_amd64",
+              "platform": "netbsd_amd64",
+              "version": "23.01",
+              "build_file": "@@//zip/private:toolchain.BUILD.bazel"
             }
           },
           "s2-darwin_amd64": {
@@ -949,6 +959,16 @@
             "attributes": {
               "name": "_main~toolchains~s2-freebsd_arm64",
               "platform": "freebsd_arm64",
+              "version": "v1.17.4",
+              "build_file": "@@//s2/private:toolchain.BUILD.bazel"
+            }
+          },
+          "s2-netbsd_amd64": {
+            "bzlFile": "@@//s2:repositories.bzl",
+            "ruleClassName": "_s2_toolchain_repo",
+            "attributes": {
+              "name": "_main~toolchains~s2-netbsd_amd64",
+              "platform": "netbsd_amd64",
               "version": "v1.17.4",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }

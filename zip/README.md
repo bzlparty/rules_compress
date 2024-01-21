@@ -17,5 +17,6 @@ gz_compress(
 | ------- | :----------------: | :----------------: |
 | linux   | :white_check_mark: | :white_check_mark: |
 | freebsd |        :x:         |        :x:         |
+| netbsd  | :white_check_mark: |        :x:         |
 | windows |        :x:         |        :x:         |
 | darwin  | :white_check_mark: | :white_check_mark: |

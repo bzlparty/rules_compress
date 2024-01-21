@@ -10,6 +10,7 @@ ASSETS = {
     "linux_arm64": ("s2-linux_arm64.tar.gz", "sha384-swUKxhNuqswI0K5uca4t8abQo9qUscuKs7PnDcE/kCppCrzxxNbu0LGF8f/+Isq+"),
     "freebsd_amd64": ("s2-freebsd_amd64.tar.gz", "sha384-PykoEFxXdaxpmSvIcYylfKyJuYJLSqaZAzLFV1i00mqUaNum2O+XoTir+FQru0C7"),
     "freebsd_arm64": ("s2-freebsd_arm64.tar.gz", "sha384-aYWD95FUSWJVi5VRnupVSHhRzbytq0SJemKMmGdUhnsIU//C39grt+waevaAi2Vm"),
+    "netbsd_amd64": ("s2-netbsd_amd64.tar.gz", "sha384-QExSMM4IMBlBpwEd2k8rKhrRfNxYyfmWt+kKCyiMNPcrC7AShyEduZrhC2ddsiVY"),
     "windows_amd64": ("s2-windows_amd64.zip", "sha384-SUhnKlFu/koh1abUJ2pjPog7fxKwueZvYj5/0EtJ9A4Qt+WUZhw0xl2U9YZdqhsO"),
     "windows_arm64": ("s2-windows_arm64.zip", "sha384-xZTNluN4nE/B3WjA2Y/Upv/m+wXfo7SzXKZ6D647HB2BUM1+U3FiXWEt8s/KaCeB"),
     "darwin_amd64": ("s2-darwin_amd64.tar.gz", "sha384-iX7ntPEDjVqUBo1NoOyMADT80tnKczro0zk++z8Y3rMl4s1KNLz6gLbcYLaUv+z1"),

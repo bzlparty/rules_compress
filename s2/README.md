@@ -18,5 +18,6 @@ s2_compress(
 | ------- | :----------------: | :----------------: |
 | linux   | :white_check_mark: | :white_check_mark: |
 | freebsd | :white_check_mark: | :white_check_mark: |
+| netbsd  | :white_check_mark: |        :x:         |
 | windows | :white_check_mark: | :white_check_mark: |
 | darwin  | :white_check_mark: | :white_check_mark: |
