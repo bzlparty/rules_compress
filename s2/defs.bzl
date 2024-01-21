@@ -9,10 +9,10 @@ s2c = _s2c
 def s2_compress(name, out = None, **kwargs):
     """Macro around s2c rule
 
-    name: Name of the target
-    out: Name of the output file
-    **kwargs: All other args of s2c
-
+    Args:
+      name: Name of the target
+      out: Name of the output file
+      **kwargs: All other args of s2c
     """
     if not out:
         out = "%s.%s" % (name, "sz" if kwargs.get("snappy") else "s2")

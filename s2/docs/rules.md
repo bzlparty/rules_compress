@@ -54,18 +54,13 @@ s2_compress(<a href="#s2_compress-name">name</a>, <a href="#s2_compress-out">out
 
 Macro around s2c rule
 
-name: Name of the target
-out: Name of the output file
-**kwargs: All other args of s2c
-
-
 **PARAMETERS**
 
 
 | Name  | Description | Default Value |
 | :------------- | :------------- | :------------- |
-| <a id="s2_compress-name"></a>name |  <p align="center"> - </p>   |  none |
-| <a id="s2_compress-out"></a>out |  <p align="center"> - </p>   |  <code>None</code> |
-| <a id="s2_compress-kwargs"></a>kwargs |  <p align="center"> - </p>   |  none |
+| <a id="s2_compress-name"></a>name |  Name of the target   |  none |
+| <a id="s2_compress-out"></a>out |  Name of the output file   |  <code>None</code> |
+| <a id="s2_compress-kwargs"></a>kwargs |  All other args of s2c   |  none |
 
 

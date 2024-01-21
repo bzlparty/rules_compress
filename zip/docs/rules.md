@@ -31,16 +31,16 @@ zip(<a href="#zip-name">name</a>, <a href="#zip-compression_level">compression_l
 gz_compress(<a href="#gz_compress-name">name</a>, <a href="#gz_compress-src">src</a>, <a href="#gz_compress-out">out</a>, <a href="#gz_compress-kwargs">kwargs</a>)
 </pre>
 
-
+Macro around zip rule to compress with gzip
 
 **PARAMETERS**
 
 
 | Name  | Description | Default Value |
 | :------------- | :------------- | :------------- |
-| <a id="gz_compress-name"></a>name |  <p align="center"> - </p>   |  none |
-| <a id="gz_compress-src"></a>src |  <p align="center"> - </p>   |  none |
-| <a id="gz_compress-out"></a>out |  <p align="center"> - </p>   |  <code>None</code> |
-| <a id="gz_compress-kwargs"></a>kwargs |  <p align="center"> - </p>   |  none |
+| <a id="gz_compress-name"></a>name |  Name of the target   |  none |
+| <a id="gz_compress-src"></a>src |  Label of the input   |  none |
+| <a id="gz_compress-out"></a>out |  Name of the output file   |  <code>None</code> |
+| <a id="gz_compress-kwargs"></a>kwargs |  All other args of zip   |  none |
 
 
