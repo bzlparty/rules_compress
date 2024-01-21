@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "2232509c0d40332324cb1025fa574f3c89503f788e937e44836d6ec09a3a59ef",
+  "moduleFileHash": "9120c423882749bd3a2586ada44b76d47be06376d81064f808a0a5849347d8f2",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -13,7 +13,7 @@
     "compatibilityMode": "ERROR"
   },
   "localOverrideHashes": {
-    "bzlparty_rules_compress": "20648351edffc64336f75cc576d84f8a7b5976ca8184e38d08bd1210cb513517",
+    "bzlparty_rules_compress": "0faae642c7dfaf5656c608b0949614c857dca663681c34ed9f398bd6636e8167",
     "bazel_tools": "922ea6752dc9105de5af957f7a99a6933c0a6a712d23df6aad16a9c399f7e787"
   },
   "moduleDepGraph": {
@@ -1406,7 +1406,7 @@
     },
     "@@bzlparty_rules_compress~override//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "tKvR4WM8x/P01QquZ8B4zwvv5VH6jYuscEX9hm9dxIM=",
+        "bzlTransitiveDigest": "fNnIixc22euo+yjPiTl+NeLDaWlscplrM8u7HZIBfPE=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -1418,6 +1418,16 @@
               "platform": "freebsd_amd64",
               "version": "v1.17.4",
               "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
+            }
+          },
+          "zip-netbsd_amd64": {
+            "bzlFile": "@@bzlparty_rules_compress~override//zip:repositories.bzl",
+            "ruleClassName": "_zip_toolchain_repo",
+            "attributes": {
+              "name": "bzlparty_rules_compress~override~toolchains~zip-netbsd_amd64",
+              "platform": "netbsd_amd64",
+              "version": "23.01",
+              "build_file": "@@bzlparty_rules_compress~override//zip/private:toolchain.BUILD.bazel"
             }
           },
           "s2-darwin_amd64": {
@@ -1436,6 +1446,16 @@
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2-freebsd_arm64",
               "platform": "freebsd_arm64",
+              "version": "v1.17.4",
+              "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
+            }
+          },
+          "s2-netbsd_amd64": {
+            "bzlFile": "@@bzlparty_rules_compress~override//s2:repositories.bzl",
+            "ruleClassName": "_s2_toolchain_repo",
+            "attributes": {
+              "name": "bzlparty_rules_compress~override~toolchains~s2-netbsd_amd64",
+              "platform": "netbsd_amd64",
               "version": "v1.17.4",
               "build_file": "@@bzlparty_rules_compress~override//s2/private:toolchain.BUILD.bazel"
             }

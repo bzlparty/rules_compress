@@ -10,7 +10,7 @@ bazel_dep(name = "aspect_bazel_lib", version = "2.1.0")
 bazel_dep(name = "bzlparty_tools")
 git_override(
     module_name = "bzlparty_tools",
-    commit = "8ac195fab5477fe136b8c41855da35174534fa7f",
+    commit = "dfd3404b825b32a41623eeeb7d62f675613fd7b6",
     remote = "https://github.com/bzlparty/tools.git",
 )
 
