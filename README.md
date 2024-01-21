@@ -1,7 +1,7 @@
 # Bazel Rules for File Compression
 
 [![Test](https://github.com/bzlparty/rules_compress/actions/workflows/test.yaml/badge.svg?branch=main&event=push)](https://github.com/bzlparty/rules_compress/actions/workflows/test.yaml)
-[![Release](https://img.shields.io/github/v/release/klauspost/compress?label=Release)](https://github.com/bzlparty/rules_compress/releases/latest)
+[![Release](https://img.shields.io/github/v/release/bzlparty/rules_compress?label=Release)](https://github.com/bzlparty/rules_compress/releases/latest)
 
 ## Installation
 
