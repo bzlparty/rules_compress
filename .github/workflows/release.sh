@@ -20,15 +20,6 @@ cat > release_notes.md <<EOF
 > [!IMPORTANT]  
 > Installation is only supported via Bzlmod!
 
-Choose from the options below and put as dependency in your `MODULE.bazel`.
-
-### Install from BCR
-
-\`\`\`starlark
-bazel_dep(name = "bzlparty_rules_compress", version = "${VERSION}")
-\`\`\`
-
-
 ### Install from Git
 
 \`\`\`starlark
@@ -36,7 +27,7 @@ bazel_dep(name = "bzlparty_rules_compress")
 
 git_override(
     module_name = "bzlparty_rules_compress",
-    remote = "git@github.com:bzlparty/rules_compress.git",
+    remote = "https://github.com/bzlparty/rules_compress",
     commit = "${GITHUB_SHA}",
 )
 \`\`\`
