@@ -4,13 +4,7 @@ module(
     compatibility_level = 1,
 )
 
-bazel_dep(name = "platforms", version = "0.0.8")
-bazel_dep(name = "bzlparty_tools")
-git_override(
-    module_name = "bzlparty_tools",
-    commit = "dfd3404b825b32a41623eeeb7d62f675613fd7b6",
-    remote = "https://github.com/bzlparty/tools.git",
-)
+bazel_dep(name = "bzlparty_tools", version = "0.2.0")
 
 rules_compress_toolchains = use_extension("@bzlparty_rules_compress//:extensions.bzl", "toolchains")
 rules_compress_toolchains.s2()
