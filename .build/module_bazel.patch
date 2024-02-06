@@ -1,22 +1,16 @@
-diff --git a/MODULE.bazel b/.build/MODULE.bazel
-index 74ee446..eb7da59 100644
---- a/MODULE.bazel
-+++ b/.build/MODULE.bazel
-@@ -1,12 +1,10 @@
- module(
-     name = "bzlparty_rules_compress",
--    version = "0.0.0",
-+    version = "VERSION",
+--- ./MODULE.bazel
++++ .build/MODULE.bazel
+@@ -4,9 +4,6 @@
      compatibility_level = 1,
  )
  
- bazel_dep(name = "platforms", version = "0.0.8")
+-bazel_dep(name = "platforms", version = "0.0.8")
 -bazel_dep(name = "bazel_skylib", version = "1.5.0")
 -bazel_dep(name = "aspect_bazel_lib", version = "2.1.0")
- bazel_dep(name = "bzlparty_tools")
- git_override(
-     module_name = "bzlparty_tools",
-@@ -20,5 +18,3 @@ rules_compress_toolchains.zip()
+ bazel_dep(name = "bzlparty_tools", version = "0.2.0")
+ 
+ rules_compress_toolchains = use_extension("@bzlparty_rules_compress//:extensions.bzl", "toolchains")
+@@ -15,5 +12,3 @@
  use_repo(rules_compress_toolchains, "s2_toolchains", "zip_toolchains")
  
  register_toolchains("@s2_toolchains//:all", "@zip_toolchains//:all")

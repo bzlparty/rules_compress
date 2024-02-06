@@ -1,7 +1,5 @@
-diff --git a/zip/BUILD.bazel b/.build/zip.BUILD.bazel
-index 6d8e220..ecc736e 100644
---- a/zip/BUILD.bazel
-+++ b/.build/zip.BUILD.bazel
+--- zip/BUILD.bazel
++++ .build/zip.BUILD.bazel
 @@ -1,36 +1,6 @@
 -load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 -

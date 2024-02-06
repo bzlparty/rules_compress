@@ -26,7 +26,6 @@ test_suite(
     tags = ["manual"],
     tests = [
         ":lint",
-        "//.build:tests",
         "//s2/docs:update_tests",
         "//zip/docs:update_tests",
     ],

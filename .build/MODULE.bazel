@@ -1,6 +1,6 @@
 module(
     name = "bzlparty_rules_compress",
-    version = "VERSION",
+    version = "0.0.0",
     compatibility_level = 1,
 )
 
