@@ -11,7 +11,7 @@ echo -n "build: Create Rules Archive"
 build_dir=dist
 git archive \
   --add-virtual-file=${PREFIX}/BUILD.bazel:"$(cat ${build_dir}/public.BUILD.bazel)" \
-  --add-virtual-file=${PREFIX}/MODULE.bazel:"$(sed "s/VERSION/${VERSION}/" ${build_dir}/MODULE.bazel)" \
+  --add-virtual-file=${PREFIX}/MODULE.bazel:"$(sed "s/0.0.0/${VERSION}/" ${build_dir}/MODULE.bazel)" \
   --add-virtual-file=${PREFIX}/s2/BUILD.bazel:"$(cat ${build_dir}/s2.BUILD.bazel)" \
   --add-virtual-file=${PREFIX}/s2/private/BUILD.bazel:"$(cat ${build_dir}/private.BUILD.bazel)" \
   --add-virtual-file=${PREFIX}/zip/BUILD.bazel:"$(cat ${build_dir}/zip.BUILD.bazel)" \
