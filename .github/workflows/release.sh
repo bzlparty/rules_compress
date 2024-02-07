@@ -8,7 +8,7 @@ PREFIX="${NAME}-${VERSION}"
 RULES_ARCHIVE="${NAME}-${TAG}.tar.gz"
 
 echo -n "build: Create Rules Archive"
-build_dir=.build
+build_dir=dist
 git archive \
   --add-virtual-file=${PREFIX}/BUILD.bazel:"$(cat ${build_dir}/public.BUILD.bazel)" \
   --add-virtual-file=${PREFIX}/MODULE.bazel:"$(sed "s/VERSION/${VERSION}/" ${build_dir}/MODULE.bazel)" \

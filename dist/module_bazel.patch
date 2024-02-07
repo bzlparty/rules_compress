@@ -1,5 +1,5 @@
 --- ./MODULE.bazel
-+++ .build/MODULE.bazel
++++ dist/MODULE.bazel
 @@ -4,9 +4,6 @@
      compatibility_level = 1,
  )

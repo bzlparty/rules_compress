@@ -1,6 +1,6 @@
---- zip/BUILD.bazel
-+++ .build/zip.BUILD.bazel
-@@ -1,36 +1,6 @@
+--- s2/BUILD.bazel
++++ dist/s2.BUILD.bazel
+@@ -1,35 +1,6 @@
 -load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 -
 +# buildifier: disable=module-docstring
@@ -10,7 +10,7 @@
 -    name = "defs",
 -    srcs = ["defs.bzl"],
 -    deps = [
--        "//zip/private:zip",
+-        "//s2/private:s2",
 -    ],
 -)
 -
@@ -31,10 +31,9 @@
 -        ":assets",
 -        "//utils:repositories",
 -        "@bzlparty_tools//lib:github",
--        "@bzlparty_tools//lib:platforms",
 -    ],
 -)
 -
  toolchain_type(
-     name = "zip_toolchain_type",
+     name = "s2c_toolchain_type",
  )
