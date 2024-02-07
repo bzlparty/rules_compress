@@ -933,7 +933,7 @@
   "moduleExtensions": {
     "//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "w4dN0/0ASbiMEGsENXi3b8YPiu2b6w2ygxD0Vob25zU=",
+        "bzlTransitiveDigest": "eCsfsWMu0CBMo36piGtLZwV6wk8kgg5VOjd2B72WJxQ=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -943,7 +943,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-freebsd_amd64",
               "platform": "freebsd_amd64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -963,7 +963,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-darwin_amd64",
               "platform": "darwin_amd64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -973,7 +973,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-freebsd_arm64",
               "platform": "freebsd_arm64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -983,7 +983,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-netbsd_amd64",
               "platform": "netbsd_amd64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -993,7 +993,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-linux_amd64",
               "platform": "linux_amd64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -1013,7 +1013,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-windows_amd64",
               "platform": "windows_amd64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -1031,7 +1031,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-linux_arm64",
               "platform": "linux_arm64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -1041,7 +1041,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-windows_arm64",
               "platform": "windows_arm64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
@@ -1081,7 +1081,7 @@
             "attributes": {
               "name": "_main~toolchains~s2-darwin_arm64",
               "platform": "darwin_arm64",
-              "version": "v1.17.4",
+              "version": "v1.17.6",
               "build_file": "@@//s2/private:toolchain.BUILD.bazel"
             }
           },
