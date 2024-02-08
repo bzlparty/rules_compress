@@ -63,6 +63,6 @@ Macro around s2c rule
 | :------------- | :------------- | :------------- |
 | <a id="s2_compress-name"></a>name |  Name of the target   |  none |
 | <a id="s2_compress-out"></a>out |  Name of the output file   |  <code>None</code> |
-| <a id="s2_compress-kwargs"></a>kwargs |  All other args of s2c   |  none |
+| <a id="s2_compress-kwargs"></a>kwargs |  All other args of [s2c](#s2c)   |  none |
 
 

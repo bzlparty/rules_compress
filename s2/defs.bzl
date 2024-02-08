@@ -12,7 +12,7 @@ def s2_compress(name, out = None, **kwargs):
     Args:
       name: Name of the target
       out: Name of the output file
-      **kwargs: All other args of s2c
+      **kwargs: All other args of [s2c](#s2c)
     """
     if not out:
         out = "%s.%s" % (name, "sz" if kwargs.get("snappy") else "s2")
