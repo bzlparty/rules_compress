@@ -7,7 +7,7 @@ S2 Public API
 ## s2c
 
 <pre>
-s2c(<a href="#s2c-name">name</a>, <a href="#s2c-mode">mode</a>, <a href="#s2c-out">out</a>, <a href="#s2c-snappy">snappy</a>, <a href="#s2c-src">src</a>)
+s2c(<a href="#s2c-name">name</a>, <a href="#s2c-cpu">cpu</a>, <a href="#s2c-index">index</a>, <a href="#s2c-mode">mode</a>, <a href="#s2c-out">out</a>, <a href="#s2c-snappy">snappy</a>, <a href="#s2c-src">src</a>)
 </pre>
 
 
@@ -18,6 +18,8 @@ s2c(<a href="#s2c-name">name</a>, <a href="#s2c-mode">mode</a>, <a href="#s2c-ou
 | Name  | Description | Type | Mandatory | Default |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
 | <a id="s2c-name"></a>name |  A unique name for this target.   | <a href="https://bazel.build/concepts/labels#target-names">Name</a> | required |  |
+| <a id="s2c-cpu"></a>cpu |  Amount of threads   | Integer | optional | <code>4</code> |
+| <a id="s2c-index"></a>index |  Add seek index   | Boolean | optional | <code>True</code> |
 | <a id="s2c-mode"></a>mode |  Either 'faster' or 'slower'   | String | optional | <code>"slower"</code> |
 | <a id="s2c-out"></a>out |  Name of the compressed file   | <a href="https://bazel.build/concepts/labels">Label</a> | required |  |
 | <a id="s2c-snappy"></a>snappy |  Generate Snappy compatible output   | Boolean | optional | <code>False</code> |

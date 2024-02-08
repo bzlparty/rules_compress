@@ -12,8 +12,10 @@ S2FileInfo = provider(
 def _s2c_impl(ctx):
     toolchain = ctx.toolchains["@bzlparty_rules_compress//s2:s2c_toolchain_type"].compress_info
     args = ctx.actions.args()
-    args.add("-o", ctx.outputs.out)
     args.add("-%s" % ctx.attr.mode)
+    args.add("-cpu=%s" % ctx.attr.cpu)
+    args.add("-index=%s" % ctx.attr.index)
+    args.add("-o", ctx.outputs.out)
     args.add("-q")
     args.add(ctx.file.src)
 
@@ -51,6 +53,14 @@ s2c = rule(
         "snappy": attr.bool(
             doc = "Generate Snappy compatible output",
             default = False,
+        ),
+        "index": attr.bool(
+            doc = "Add seek index",
+            default = True,
+        ),
+        "cpu": attr.int(
+            doc = "Amount of threads",
+            default = 4,
         ),
         "out": attr.output(
             doc = "Name of the compressed file",
