@@ -1,4 +1,4 @@
-"S2 Compression rule"
+"# S2 Compression"
 
 S2FileInfo = provider(
     doc = "S2 File Provider",
@@ -10,7 +10,7 @@ S2FileInfo = provider(
 )
 
 def _s2c_impl(ctx):
-    toolchain = ctx.toolchains["@bzlparty_rules_compress//s2:s2c_toolchain_type"].compress_info
+    toolchain = ctx.toolchains["@bzlparty_rules_compress//s2:s2c_toolchain_type"].binary_info
     args = ctx.actions.args()
     args.add("-%s" % ctx.attr.mode)
     args.add("-cpu=%s" % ctx.attr.cpu)
@@ -22,7 +22,7 @@ def _s2c_impl(ctx):
     ctx.actions.run(
         inputs = [ctx.file.src],
         outputs = [ctx.outputs.out],
-        executable = toolchain.executable,
+        executable = toolchain.binary,
         mnemonic = "S2Compress",
         progress_message = "Compress: %{input} > %{output}",
         arguments = [args],
@@ -72,5 +72,10 @@ s2c = rule(
             mandatory = True,
         ),
     },
+    doc = """
+This rule runs `s2c` to compress an input file.
+
+See https://github.com/klauspost/compress/tree/master/s2#s2c for details.
+""",
     toolchains = ["@bzlparty_rules_compress//s2:s2c_toolchain_type"],
 )

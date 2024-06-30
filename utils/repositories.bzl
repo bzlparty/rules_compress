@@ -1,27 +1,48 @@
 "Repository Utils"
 
-def _toolchain_build_file(ctx, **kwargs):
-    ctx.template("BUILD.bazel", ctx.attr.build_file, executable = False, **kwargs)
+def compress_toolchains(name, assets):
+    """Macro to prepare all toolchains
 
-def _compress_toolchain_repo(implementation):
-    def compress_toolchain_repo_impl(ctx):
-        implementation(ctx)
-        _toolchain_build_file(ctx)
+    Args:
+      name: uniqe name
+      assets: assets to use
+    """
+    for (platform, asset) in assets.items():
+        _platform_toolchain(
+            name = "%s_%s" % (name, platform),
+            url = asset.url,
+            integrity = asset.integrity,
+            build_file = "//%s/private:toolchain.BUILD.bazel" % name,
+        )
 
-    return compress_toolchain_repo_impl
+    _platform_toolchains(
+        name = "%s_toolchains" % name,
+        build_file = "//%s/private:toolchains.BUILD.bazel" % name,
+    )
 
-compress_toolchain_repo = struct(
-    implementor = _compress_toolchain_repo,
+def _toolchain_build_file(ctx):
+    ctx.template("BUILD.bazel", ctx.attr.build_file, executable = False)
+
+def _platform_toolchain_impl(ctx):
+    ctx.download_and_extract(
+        url = ctx.attr.url,
+        integrity = ctx.attr.integrity,
+    )
+
+    _toolchain_build_file(ctx)
+
+_platform_toolchain = repository_rule(
+    _platform_toolchain_impl,
     attrs = {
-        "platform": attr.string(mandatory = True),
-        "version": attr.string(mandatory = True),
+        "url": attr.string(mandatory = True),
+        "integrity": attr.string(mandatory = True),
         "build_file": attr.label(allow_single_file = True, mandatory = True),
     },
 )
 
-combined_toolchains_repo = repository_rule(
+_platform_toolchains = repository_rule(
     lambda ctx: _toolchain_build_file(ctx),
     attrs = {
-        "build_file": attr.label(mandatory = True),
+        "build_file": attr.label(mandatory = True, allow_single_file = True),
     },
 )

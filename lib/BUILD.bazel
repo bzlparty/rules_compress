@@ -1,0 +1,1 @@
+exports_files(["platform_binary.awk"])

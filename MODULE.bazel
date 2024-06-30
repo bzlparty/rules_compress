@@ -5,9 +5,18 @@ module(
 )
 
 bazel_dep(name = "platforms", version = "0.0.8")
+
+# dist:not {
 bazel_dep(name = "bazel_skylib", version = "1.5.0")
 bazel_dep(name = "aspect_bazel_lib", version = "2.1.0")
-bazel_dep(name = "bzlparty_tools", version = "0.2.0")
+bazel_dep(name = "bzlparty_tools")
+archive_override(
+    module_name = "bzlparty_tools",
+    integrity = "sha384-0yANdDDake+LVcTvKA4FhuMBDC5o4LQN3jlrpOzxZ8BIknduOJnKidBF9e2uJoiE",
+    strip_prefix = "tools-0.3.0",
+    urls = "https://github.com/bzlparty/tools/releases/download/v0.3.0/tools-v0.3.0.tar.gz",
+)
+# }
 
 rules_compress_toolchains = use_extension("@bzlparty_rules_compress//:extensions.bzl", "toolchains")
 rules_compress_toolchains.s2()

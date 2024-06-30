@@ -1,21 +1,6 @@
-"""Assets
-
-https://github.com/ip7z/7zip/releases/tag/23.01
-"""
-
-load("@bzlparty_tools//lib:platforms.bzl", _PLATFORMS = "PLATFORMS")
-
 ASSETS = {
-    "linux_amd64": ("7z2301-linux-x64.tar.xz", "sha384-vUHAT60cQrz9f9Io4B39G7gFHIeFvB0AGIgvYMei9KMExVwkG1ddKtRHP5kpj6xH"),
-    "linux_arm64": ("7z2301-linux-arm64.tar.xz", "sha384-P4ozAhVa9VwHwQNtnuXbhHifw6v4432u8JU31cLATiuudGROJLSV85y1lBc2SMdy"),
-    "netbsd_amd64": ("7-zip-23.01.tgz", "sha384-vUHAT60cQrz9f9Io4B39G7gFHIeFvB0AGIgvYMei9KMExVwkG1ddKtRHP5kpj6xH"),
-    "darwin_amd64": ("7z2301-mac.tar.xz", "sha384-FGuZ8xXzwK4LJKG11XCwCm0pIw/W10fJFqHvDOkJPATGSemjthTe0J4MgwHforcc"),
-    "darwin_arm64": ("7z2301-mac.tar.xz", "sha384-FGuZ8xXzwK4LJKG11XCwCm0pIw/W10fJFqHvDOkJPATGSemjthTe0J4MgwHforcc"),
+    "darwin_amd64": struct(binary = "7zz", url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-mac.tar.xz", integrity = "sha384-xl0HW3pHOySG+NRdSnf/fhIDKpHlwjOC2dpqUOXYEXH2Ifh8jrg2FnjKz09W0F+G"),
+    "darwin_arm64": struct(binary = "7zz", url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-mac.tar.xz", integrity = "sha384-xl0HW3pHOySG+NRdSnf/fhIDKpHlwjOC2dpqUOXYEXH2Ifh8jrg2FnjKz09W0F+G"),
+    "linux_amd64": struct(binary = "7zz", url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-linux-x64.tar.xz", integrity = "sha384-nsopQowWAMD63n2PE7NpPl+ySf6c1/l4oMrHMC+rXTS+NeIXik5Hsar253TSmHtq"),
+    "linux_arm64": struct(binary = "7zz", url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-linux-arm64.tar.xz", integrity = "sha384-VeJ8StL8Ra8anxxS70xVZaBxhb+tNJWo4mMcUVYEK09pfgFaVJdp5sA/D9+7O5IG"),
 }
-
-PLATFORMS = {
-    p: _PLATFORMS[p]
-    for p in ASSETS.keys()
-}
-
-VERSION = "23.01"

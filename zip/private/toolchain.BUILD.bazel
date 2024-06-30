@@ -1,13 +1,11 @@
 "BUILD file template for a platform-sepecific toolchain"
 
-load("@bzlparty_rules_compress//utils:toolchain.bzl", "compress_toolchain")
+load("@bzlparty_tools//lib:toolchains.bzl", "binary_toolchain")
 
 package(default_visibility = ["//visibility:public"])
 
-compress_toolchain(
+binary_toolchain(
     name = "zip_toolchain",
-    executable = select({
-        "@bazel_tools//src/conditions:host_windows": "7zz.exe",
-        "//conditions:default": "7zz",
-    }),
+    prefix = "7zz",
+    binary = "7zz",
 )

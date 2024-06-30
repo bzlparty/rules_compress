@@ -1,25 +1,17 @@
 "BUILD file template for a combined toolchain that hosts all platform toolchains"
 
-load("@bzlparty_rules_compress//s2:assets.bzl", "PLATFORMS")
-load("@bzlparty_tools//platforms:host.bzl", "HOST_PLATFORM")
+load("@bzlparty_rules_compress//s2:assets.bzl", "ASSETS")
+load("@bzlparty_tools//lib:platforms.bzl", "PLATFORMS")
+
+_SUPPORTED_PLATFORMS = ASSETS.keys()
 
 [
     toolchain(
-        name = "s2c-%s_toolchain" % platform,
-        toolchain = "@s2-%s//:s2c_toolchain" % platform,
+        name = "s2c_%s_toolchain" % platform,
+        toolchain = "@s2_%s//:s2c_toolchain" % platform,
         exec_compatible_with = ecw,
         toolchain_type = "@bzlparty_rules_compress//s2:s2c_toolchain_type",
         visibility = ["//visibility:public"],
-    )
+    ) if platform in _SUPPORTED_PLATFORMS else ()
     for (platform, ecw) in PLATFORMS.items()
 ]
-
-HOST_TOOLCHAIN = "@s2-%s//" % HOST_PLATFORM
-
-alias(
-    name = "s2c",
-    actual = select({
-        "@bazel_tools//src/conditions:host_windows": "%s:s2c.exe" % HOST_TOOLCHAIN,
-        "//conditions:default": "%s:s2c" % HOST_TOOLCHAIN,
-    }),
-)

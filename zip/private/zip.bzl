@@ -1,4 +1,4 @@
-"Zip Compression rule"
+"# 7-Zip Compression"
 
 ZipFileInfo = provider(
     doc = "Zip File Provider",
@@ -9,7 +9,7 @@ ZipFileInfo = provider(
 )
 
 def _zip_impl(ctx):
-    toolchain = ctx.toolchains["@bzlparty_rules_compress//zip:zip_toolchain_type"].compress_info
+    toolchain = ctx.toolchains["@bzlparty_rules_compress//zip:zip_toolchain_type"].binary_info
 
     if ctx.outputs.out.basename.endswith(".gz") and len(ctx.files.srcs) > 1:
         fail("gz can only compress a single file! %s files given" % len(ctx.files.srcs))
@@ -26,7 +26,7 @@ def _zip_impl(ctx):
     ctx.actions.run(
         inputs = ctx.files.srcs,
         outputs = [ctx.outputs.out],
-        executable = toolchain.executable,
+        executable = toolchain.binary,
         mnemonic = "ZipCompress",
         progress_message = "Compress: %{input} > %{output}",
         arguments = [args],
@@ -63,5 +63,10 @@ zip = rule(
             mandatory = True,
         ),
     },
+    doc = """
+This rule runs `7zz` to compress an input file.
+
+See https://7-zip.org/ for details.
+""",
     toolchains = ["@bzlparty_rules_compress//zip:zip_toolchain_type"],
 )

@@ -1,8 +1,16 @@
 module(name = "bzlparty_rules_compress_e2e")
 
 bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(name = "bzlparty_tools")
 bazel_dep(name = "bzlparty_rules_compress")
 local_path_override(
     module_name = "bzlparty_rules_compress",
     path = "..",
+)
+
+archive_override(
+    module_name = "bzlparty_tools",
+    integrity = "sha384-0yANdDDake+LVcTvKA4FhuMBDC5o4LQN3jlrpOzxZ8BIknduOJnKidBF9e2uJoiE",
+    strip_prefix = "tools-0.3.0",
+    urls = "https://github.com/bzlparty/tools/releases/download/v0.3.0/tools-v0.3.0.tar.gz",
 )

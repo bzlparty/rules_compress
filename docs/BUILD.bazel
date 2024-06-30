@@ -1,0 +1,13 @@
+load("@aspect_bazel_lib//lib:docs.bzl", "stardoc_with_diff_test", "update_docs")
+
+stardoc_with_diff_test(
+    name = "s2",
+    bzl_library_target = "//s2:defs",
+)
+
+stardoc_with_diff_test(
+    name = "zip",
+    bzl_library_target = "//zip:defs",
+)
+
+update_docs()
