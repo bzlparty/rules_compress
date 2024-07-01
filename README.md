@@ -12,21 +12,8 @@ See install instructions on the [release page](https://github.com/bzlparty/rules
 
 ## Compression
 
-### [S2](https://github.com/klauspost/compress/tree/master/s2#s2-compression)
-
-> S2 is a high performance replacement for Snappy.
-
-- [**Details**](/s2/README.md)
-- [**Rules**](/s2/docs/rules.md)
-- [**Binaries**](https://github.com/klauspost/compress/releases)
-
-### [7-Zip](https://www.7-zip.org/)
-
-> 7-Zip is a file archiver with a high compression ratio.
-
-- [**Details**](/zip/README.md)
-- [**Rules**](/zip/docs/rules.md)
-- [**Binaries**](https://github.com/ip7z/7zip/releases)
+- [S2](/docs/s2.md) is a high performance replacement for Snappy.
+- [7-Zip](/docs/zip.md) is a file archiver with a high compression ratio.
 
 ## Development
 
@@ -38,4 +25,4 @@ pre-commit install
 
 ## License
 
-[GNU GPL 3.0](/LICENSE)
+[GNU LGPL 3.0](/LICENSE)
