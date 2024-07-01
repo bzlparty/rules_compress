@@ -6,6 +6,7 @@ buildifier(
     name = "format",
     exclude_patterns = [
         "./.git/*",
+        "**/assets.bzl",
     ],
     lint_mode = "fix",
     mode = "fix",
