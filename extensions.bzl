@@ -1,7 +1,7 @@
 "Module Extensions"
 
+load("//lib:repositories.bzl", "compress_toolchains")
 load("//s2:assets.bzl", S2_ASSETS = "ASSETS")
-load("//utils:repositories.bzl", "compress_toolchains")
 load("//zip:assets.bzl", ZIP_ASSETS = "ASSETS")
 
 TOOLS = {

@@ -1592,12 +1592,12 @@
     },
     "@@bzlparty_rules_compress~override//:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "kSV25pjM0d7tn+QubDPuBugmixvXlBqDnOmsWxS/664=",
+        "bzlTransitiveDigest": "WNXGVNhE7vQZNnRDpiwKPH9REZX71R1i1cXSGGNBiyU=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
           "s2_darwin_arm64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_darwin_arm64",
@@ -1607,7 +1607,7 @@
             }
           },
           "s2_freebsd_arm64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_freebsd_arm64",
@@ -1617,7 +1617,7 @@
             }
           },
           "s2_linux_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_linux_amd64",
@@ -1627,7 +1627,7 @@
             }
           },
           "s2_windows_arm64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_windows_arm64",
@@ -1637,7 +1637,7 @@
             }
           },
           "zip_linux_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~zip_linux_amd64",
@@ -1647,7 +1647,7 @@
             }
           },
           "s2_linux_arm64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_linux_arm64",
@@ -1657,7 +1657,7 @@
             }
           },
           "s2_netbsd_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_netbsd_amd64",
@@ -1667,7 +1667,7 @@
             }
           },
           "zip_darwin_arm64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~zip_darwin_arm64",
@@ -1677,7 +1677,7 @@
             }
           },
           "s2_windows_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_windows_amd64",
@@ -1687,7 +1687,7 @@
             }
           },
           "s2_toolchains": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchains",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_toolchains",
@@ -1695,7 +1695,7 @@
             }
           },
           "zip_darwin_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~zip_darwin_amd64",
@@ -1705,7 +1705,7 @@
             }
           },
           "zip_linux_arm64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~zip_linux_arm64",
@@ -1715,7 +1715,7 @@
             }
           },
           "s2_freebsd_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_freebsd_amd64",
@@ -1725,7 +1725,7 @@
             }
           },
           "zip_toolchains": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchains",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~zip_toolchains",
@@ -1733,7 +1733,7 @@
             }
           },
           "s2_darwin_amd64": {
-            "bzlFile": "@@bzlparty_rules_compress~override//utils:repositories.bzl",
+            "bzlFile": "@@bzlparty_rules_compress~override//lib:repositories.bzl",
             "ruleClassName": "_platform_toolchain",
             "attributes": {
               "name": "bzlparty_rules_compress~override~toolchains~s2_darwin_amd64",
