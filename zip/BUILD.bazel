@@ -1,5 +1,5 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@bzlparty_tools//lib:platform_binary.bzl", "platform_binaries")
+load("@bzlparty_tools//lib:defs.bzl", "multi_platform_assets")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -25,7 +25,7 @@ VERSION_INT = VERSION.replace(".", "")
 
 GITHUB_URL = "https://github.com/ip7z/7zip/releases/download/%s" % VERSION
 
-platform_binaries(
+multi_platform_assets(
     name = "7zz",
     binary = "7zz",
     platforms = [
@@ -44,5 +44,5 @@ platform_binaries(
 )
 
 toolchain_type(
-    name = "zip_toolchain_type",
+    name = "7zz_toolchain_type",
 )

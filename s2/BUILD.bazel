@@ -1,5 +1,5 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@bzlparty_tools//lib:defs.bzl", "platform_binaries")
+load("@bzlparty_tools//lib:defs.bzl", "multi_platform_assets")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -20,7 +20,7 @@ bzl_library(
 
 GITHUB_URL = "https://github.com/klauspost/compress/releases/download/v1.17.9"
 
-platform_binaries(
+multi_platform_assets(
     name = "s2c",
     binary = "s2c",
     platforms = [
