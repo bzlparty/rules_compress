@@ -1,8 +1,8 @@
 "Module Extensions"
 
 load("@bzlparty_tools//lib:toolchains.bzl", "register_platform_toolchains")
-load("//s2:assets.bzl", S2_ASSETS = "ASSETS")
-load("//zip:assets.bzl", ZIP_ASSETS = "ASSETS")
+load("//s2/toolchains:assets.bzl", S2_ASSETS = "ASSETS")
+load("//zip/toolchains:assets.bzl", ZIP_ASSETS = "ASSETS")
 
 TOOLS = {
     "s2": struct(assets = S2_ASSETS, toolchain_type = "s2c_toolchain_type"),

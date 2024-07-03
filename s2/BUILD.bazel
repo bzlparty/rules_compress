@@ -1,5 +1,4 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@bzlparty_tools//lib:defs.bzl", "multi_platform_assets")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -9,32 +8,6 @@ bzl_library(
     deps = [
         "//s2/private:s2",
     ],
-)
-
-bzl_library(
-    name = "assets",
-    srcs = [
-        "assets.bzl",
-    ],
-)
-
-GITHUB_URL = "https://github.com/klauspost/compress/releases/download/v1.17.9"
-
-multi_platform_assets(
-    name = "s2c",
-    binary = "s2c",
-    platforms = [
-        "darwin_amd64",
-        "darwin_arm64",
-        "freebsd_amd64",
-        "freebsd_arm64",
-        "linux_amd64",
-        "linux_arm64",
-        "netbsd_amd64",
-        "windows_amd64",
-        "windows_arm64",
-    ],
-    url = "%s/s2-{platform}.{ext}" % GITHUB_URL,
 )
 
 toolchain_type(

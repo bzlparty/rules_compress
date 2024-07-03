@@ -1,5 +1,4 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@bzlparty_tools//lib:defs.bzl", "multi_platform_assets")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -9,38 +8,6 @@ bzl_library(
     deps = [
         "//zip/private:zip",
     ],
-)
-
-bzl_library(
-    name = "assets",
-    srcs = [
-        "assets.bzl",
-    ],
-    visibility = ["//visibility:public"],
-)
-
-VERSION = "24.07"
-
-VERSION_INT = VERSION.replace(".", "")
-
-GITHUB_URL = "https://github.com/ip7z/7zip/releases/download/%s" % VERSION
-
-multi_platform_assets(
-    name = "7zz",
-    binary = "7zz",
-    platforms = [
-        "darwin_amd64",
-        "darwin_arm64",
-        "linux_amd64",
-        "linux_arm64",
-    ],
-    platforms_map = {
-        "darwin_amd64": "mac",
-        "darwin_arm64": "mac",
-        "linux_amd64": "linux-x64",
-        "linux_arm64": "linux-arm64",
-    },
-    url = "%s/7z%s-{platform}.tar.xz" % (GITHUB_URL, VERSION_INT),
 )
 
 toolchain_type(
