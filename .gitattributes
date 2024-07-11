@@ -3,5 +3,6 @@
 .git*                       export-ignore
 .pre-commit-config.yaml     export-ignore
 e2e                         export-ignore
+scripts                     export-ignore
 tests                       export-ignore
 **/toolchains/BUILD.bazel   export-ignore
