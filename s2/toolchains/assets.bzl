@@ -1,3 +1,5 @@
+"Assets"
+
 ASSETS = {
     "darwin_amd64": struct(url = "https://github.com/klauspost/compress/releases/download/v1.17.9/s2-darwin_amd64.tar.gz", binary = "s2c", integrity = "sha384-JAjr6oKZPFFnHnkSDhMVW+cHUrvRmkUunJIDo9OzlcpEqljzg+SYZOTmcGXYb5ZN"),
     "darwin_arm64": struct(url = "https://github.com/klauspost/compress/releases/download/v1.17.9/s2-darwin_arm64.tar.gz", binary = "s2c", integrity = "sha384-5oXYvyx6BW5BcesxK6TqW1yPJpjlt18/UbFBneyhZvqYoYx36NsBZv+6+eSfb9of"),

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+export DEST=${DEST:-dist}
+export TAG=${GITHUB_REF_NAME:-main}
+
+rm -rf "$DEST"
+mkdir "$DEST"
+
+bazel run --action_env=TAG="$TAG" //scripts/release:git_archive

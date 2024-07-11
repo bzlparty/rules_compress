@@ -1,3 +1,5 @@
+"Assets"
+
 ASSETS = {
     "darwin_amd64": struct(url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-mac.tar.xz", binary = "7zz", integrity = "sha384-xl0HW3pHOySG+NRdSnf/fhIDKpHlwjOC2dpqUOXYEXH2Ifh8jrg2FnjKz09W0F+G"),
     "darwin_arm64": struct(url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-mac.tar.xz", binary = "7zz", integrity = "sha384-xl0HW3pHOySG+NRdSnf/fhIDKpHlwjOC2dpqUOXYEXH2Ifh8jrg2FnjKz09W0F+G"),

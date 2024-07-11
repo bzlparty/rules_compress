@@ -1,4 +1,4 @@
-load("@buildifier_prebuilt//:rules.bzl", "buildifier", "buildifier_test")
+load("@bzlparty_tools//lib:formatter.bzl", "formatter", "formatter_test")
 load("@rules_license//rules:license.bzl", "license")
 
 package(
@@ -19,24 +19,29 @@ exports_files([
     "MODULE.bazel",
 ])
 
-buildifier(
+formatter(
     name = "format",
-    exclude_patterns = [
-        "./.git/*",
-        "**/assets.bzl",
-    ],
-    lint_mode = "fix",
+    config = ":formatter.json",
     mode = "fix",
+    tools = {
+        "@biome": "biome",
+        "@buildifier_prebuilt//:buildifier": "buildifier",
+    },
 )
 
-buildifier_test(
-    name = "lint",
-    size = "small",
-    exclude_patterns = [
-        "**/assets.bzl",
-    ],
-    lint_mode = "warn",
+formatter_test(
+    name = "check",
+    config = ":formatter.json",
     mode = "check",
-    no_sandbox = True,
-    workspace = "//:WORKSPACE",
+    tags = [
+        "external",
+        "no-cache",
+        "no-sandbox",
+    ],
+    tools = {
+        "@biome": "biome",
+        "@shellcheck": "shellcheck",
+        "@typos": "typos",
+        "@buildifier_prebuilt//:buildifier": "buildifier",
+    },
 )
