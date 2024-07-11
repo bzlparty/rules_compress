@@ -60,7 +60,6 @@ create_module_bazel(
 git_archive(
     name = "git_archive",
     package_name = "rules_compress",
-    sha = "@sha//:sha",
     tags = ["manual"],
     virtual_files = {
         ":root_BUILD.bazel": "BUILD.bazel",
