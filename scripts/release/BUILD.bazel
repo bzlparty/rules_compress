@@ -1,43 +1,19 @@
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
-load("@bzlparty_tools//lib:create_module_bazel.bzl", "create_module_bazel")
-load("@bzlparty_tools//lib:git_archive.bzl", "git_archive")
-
-ROOT_BUILD_FILE = """\
-load("@rules_license//rules:license.bzl", "license")
-
-package(
-    default_applicable_licenses = [":license"],
-    default_visibility = ["//visibility:public"],
-)
-
-license(
-    name = "license",
-    license_kinds = [
-        "@rules_license//licenses/spdx:LGPL-3.0-or-later",
-    ],
-    license_text = "LICENSE",
-)
-
-exports_files([
-    "LICENSE",
-    "MODULE.bazel",
-])
-"""
-
-write_file(
-    name = "root_build_bazel",
-    out = "root_BUILD.bazel",
-    content = [ROOT_BUILD_FILE],
-    tags = ["manual"],
+load(
+    "@bzlparty_tools//lib:defs.bzl",
+    "dcomment",
+    "git_archive",
+    "release_notes",
+    "versioned_module_bazel",
 )
 
 write_file(
     name = "toolchains_build_bazel",
     out = "toolchains_BUILD.bazel",
-    content = [
-        "package(default_visibility = [\"//visibility:public\"])",
-        "exports_files([\"assets.bzl\"])",
-    ],
+    content = ["""\
+package(default_visibility = ["//visibility:public"])
+exports_files(["assets.bzl"])
+"""],
     tags = ["manual"],
 )
 
@@ -51,20 +27,39 @@ alias(
     actual = "toolchains_build_bazel",
 )
 
-create_module_bazel(
+versioned_module_bazel(
+    name = "versioned_module_bazel",
+    out = "versioned_MODULE.bazel",
+    version = "@bzlparty_tools//lib:release_tag",
+)
+
+dcomment(
     name = "root_module_bazel",
+    src = ":versioned_module_bazel",
     out = "root_MODULE.bazel",
-    tags = ["manual"],
+    defines = ["_BZLPARTY_RELEASE_PRIVATE_"],
+)
+
+dcomment(
+    name = "root_build_bazel",
+    src = "//:BUILD.bazel",
+    out = "root_BUILD.bazel",
+    defines = ["_BZLPARTY_RELEASE_PRIVATE_"],
 )
 
 git_archive(
     name = "git_archive",
     package_name = "rules_compress",
-    tags = ["manual"],
+    commit = "@bzlparty_tools//lib:release_tag",
     virtual_files = {
         ":root_BUILD.bazel": "BUILD.bazel",
         ":root_MODULE.bazel": "MODULE.bazel",
         ":s2_toolchains_build_bazel": "s2/toolchains/BUILD.bazel",
         ":zip_toolchains_build_bazel": "zip/toolchains/BUILD.bazel",
     },
+)
+
+release_notes(
+    name = "release_notes",
+    package = "rules_compress",
 )

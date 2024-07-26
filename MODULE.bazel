@@ -4,22 +4,18 @@ module(
     compatibility_level = 1,
 )
 
-bazel_dep(name = "platforms", version = "0.0.8")
+bazel_dep(name = "platforms", version = "0.0.10")
 bazel_dep(name = "rules_license", version = "0.0.8")
-bazel_dep(name = "bazel_skylib", version = "1.5.0")
-bazel_dep(name = "bzlparty_tools")
-archive_override(
-    module_name = "bzlparty_tools",
-    integrity = "sha384-jmMjAUiTmImYgb/Dm2aFaJnholRJVB461ProsVhj2TlkqxvLIe5gr8pgGpDmQyRI",
-    strip_prefix = "tools-0.3.2",
-    urls = "https://github.com/bzlparty/tools/releases/download/v0.3.2/tools-v0.3.2.tar.gz",
-)
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "bzlparty_tools", version = "0.4.0")
 
+#ifndef _BZLPARTY_RELEASE_
 bazel_dep(name = "aspect_bazel_lib", version = "2.3.0", dev_dependency = True)
 bazel_dep(name = "buildifier_prebuilt", version = "6.4.0", dev_dependency = True)
 
 tools = use_extension("@bzlparty_tools//:extensions.bzl", "tools", dev_dependency = True)
 use_repo(tools, "biome", "shellcheck", "typos")
+#endif
 
 rules_compress_toolchains = use_extension("@bzlparty_rules_compress//:extensions.bzl", "toolchains")
 rules_compress_toolchains.s2()

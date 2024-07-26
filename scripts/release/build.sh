@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-export DEST=${DEST:-dist}
-export TAG=${GITHUB_REF_NAME:-main}
+COMMIT="${GITHUB_REF_NAME:-main}"
+DEST="$(pwd)/dist"
 
-rm -rf "$DEST"
-mkdir "$DEST"
+rm -rf "$DEST"; mkdir "$DEST"
 
-bazel run --action_env=TAG="$TAG" //scripts/release:git_archive
+bazel run \
+  --@bzlparty_tools//lib:release_dir="$DEST" \
+  --@bzlparty_tools//lib:release_tag="$COMMIT" \
+  //scripts/release:git_archive

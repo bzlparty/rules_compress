@@ -1,4 +1,4 @@
-load("@bzlparty_tools//lib:formatter.bzl", "formatter", "formatter_test")
+load("@bzlparty_tools//lib:defs.bzl", "formatter", "formatter_test")
 load("@rules_license//rules:license.bzl", "license")
 
 package(
@@ -17,8 +17,10 @@ license(
 exports_files([
     "LICENSE",
     "MODULE.bazel",
+    "extensions.bzl",
 ])
 
+#ifndef _BZLPARTY_RELEASE_
 formatter(
     name = "format",
     config = ":formatter.json",
@@ -45,3 +47,4 @@ formatter_test(
         "@buildifier_prebuilt//:buildifier": "buildifier",
     },
 )
+#endif

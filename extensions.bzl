@@ -1,23 +1,29 @@
 "Module Extensions"
 
-load("@bzlparty_tools//lib:toolchains.bzl", "register_platform_toolchains")
+load("@bzlparty_tools//lib:defs.bzl", "register_platform_toolchains")
+load(
+    "@bzlparty_tools//vendor/aspect_bazel_lib:extension_utils.bzl",
+    "extension_utils",
+)
 load("//s2/toolchains:assets.bzl", S2_ASSETS = "ASSETS")
 load("//zip/toolchains:assets.bzl", ZIP_ASSETS = "ASSETS")
 
-TOOLS = {
-    "s2": struct(assets = S2_ASSETS, toolchain_type = "s2c_toolchain_type"),
-    "zip": struct(assets = ZIP_ASSETS, toolchain_type = "7zz_toolchain_type"),
-}
-
-def _has_tag(module, tag):
-    return hasattr(module.tags, tag) and len(getattr(module.tags, tag)) > 0
-
 def _toolchains_extension_impl(ctx):
-    for module in ctx.modules:
-        for (name, config) in TOOLS.items():
-            if _has_tag(module, name):
-                toolchain_type = "@bzlparty_rules_compress//{}:{}".format(name, config.toolchain_type)
-                register_platform_toolchains(name, config.assets, toolchain_type)
+    extension_utils.toolchain_repos_bfs(
+        mctx = ctx,
+        get_version_fn = lambda _: "0.0.0",
+        get_tag_fn = lambda tags: tags.s2,
+        toolchain_name = "s2",
+        toolchain_repos_fn = lambda name, version: register_platform_toolchains(name = name, assets = S2_ASSETS, toolchain_type = "@bzlparty_rules_compress//s2:s2c_toolchain_type"),
+    )
+
+    extension_utils.toolchain_repos_bfs(
+        mctx = ctx,
+        get_version_fn = lambda _: "0.0.0",
+        get_tag_fn = lambda tags: tags.zip,
+        toolchain_name = "zip",
+        toolchain_repos_fn = lambda name, version: register_platform_toolchains(name = name, assets = ZIP_ASSETS, toolchain_type = "@bzlparty_rules_compress//zip:7zz_toolchain_type"),
+    )
 
 toolchains = module_extension(
     _toolchains_extension_impl,
