@@ -1,0 +1,13 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+
+package(default_visibility = ["//compress:__subpackages__"])
+
+bzl_library(
+    name = "s2",
+    srcs = ["s2.bzl"],
+)
+
+bzl_library(
+    name = "zip",
+    srcs = ["zip.bzl"],
+)

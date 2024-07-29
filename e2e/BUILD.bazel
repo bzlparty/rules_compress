@@ -1,6 +1,9 @@
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
-load("@bzlparty_rules_compress//s2:defs.bzl", "s2_compress")
-load("@bzlparty_rules_compress//zip:defs.bzl", "gz_compress")
+load(
+    "@bzlparty_rules_compress//compress:defs.bzl",
+    "gz_compress",
+    "s2_compress",
+)
 
 genrule(
     name = "empty_file_gen",

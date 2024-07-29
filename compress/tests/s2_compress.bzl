@@ -1,7 +1,7 @@
 "S2 Compress Test Suite"
 
 load("@bazel_skylib//lib:unittest.bzl", "analysistest", "asserts")
-load("//s2:defs.bzl", "s2_compress")
+load("//compress:defs.bzl", "s2_compress")
 
 def _get_single_output_from_actions(env):
     actions = analysistest.target_actions(env)

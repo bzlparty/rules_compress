@@ -1,0 +1,66 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+load("@bzlparty_tools//lib:defs.bzl", "multi_platform_assets")
+
+package(default_visibility = ["//visibility:public"])
+
+bzl_library(
+    name = "defs",
+    srcs = ["defs.bzl"],
+    deps = [
+        "//compress/private:s2",
+        "//compress/private:zip",
+    ],
+)
+
+S2_URL = "https://github.com/klauspost/compress/releases/download/v1.17.9"
+
+multi_platform_assets(
+    name = "s2",
+    assets_file = "s2_assets.bzl",
+    binary = "s2c",
+    platforms = [
+        "darwin_amd64",
+        "darwin_arm64",
+        "freebsd_amd64",
+        "freebsd_arm64",
+        "linux_amd64",
+        "linux_arm64",
+        "netbsd_amd64",
+        "windows_amd64",
+        "windows_arm64",
+    ],
+    url = "%s/s2-{platform}.{ext}" % S2_URL,
+)
+
+ZIP_VERSION = "24.07"
+
+ZIP_VERSION_INT = ZIP_VERSION.replace(".", "")
+
+ZIP_URL = "https://github.com/ip7z/7zip/releases/download/%s" % ZIP_VERSION
+
+multi_platform_assets(
+    name = "zip",
+    assets_file = "zip_assets.bzl",
+    binary = "7zz",
+    platforms = [
+        "darwin_amd64",
+        "darwin_arm64",
+        "linux_amd64",
+        "linux_arm64",
+    ],
+    platforms_map = {
+        "darwin_amd64": "mac",
+        "darwin_arm64": "mac",
+        "linux_amd64": "linux-x64",
+        "linux_arm64": "linux-arm64",
+    },
+    url = "%s/7z%s-{platform}.tar.xz" % (ZIP_URL, ZIP_VERSION_INT),
+)
+
+toolchain_type(
+    name = "s2_toolchain_type",
+)
+
+toolchain_type(
+    name = "zip_toolchain_type",
+)
