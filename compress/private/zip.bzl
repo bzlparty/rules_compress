@@ -21,7 +21,9 @@ def _zip_impl(ctx):
     args.add("-bso0")
     args.add("-mx%s" % ctx.attr.compression_level)
     args.add(ctx.outputs.out)
-    args.add_joined(ctx.files.srcs, join_with = " ")
+
+    for file in ctx.files.srcs:
+      args.add(file)
 
     ctx.actions.run(
         inputs = ctx.files.srcs,
