@@ -3,6 +3,7 @@ load(
     "@bzlparty_rules_compress//compress:defs.bzl",
     "gz_compress",
     "s2_compress",
+    "zip",
 )
 
 genrule(
@@ -21,6 +22,12 @@ gz_compress(
     name = "empty_file_gz",
     src = ":empty_file",
     out = "empty_file.gz",
+)
+
+zip(
+  name = "zip_file",
+  srcs = [":empty_file_gen", "empty_file_compress"],
+  out = "zip_file.zip",
 )
 
 build_test(
