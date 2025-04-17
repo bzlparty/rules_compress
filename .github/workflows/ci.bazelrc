@@ -2,3 +2,4 @@
 build --disk_cache=~/.cache/bazel
 build --repository_cache=~/.cache/bazel-repo
 test --test_env=XDG_CACHE_HOME
+common --announce_rc
