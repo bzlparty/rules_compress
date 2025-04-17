@@ -1,10 +1,8 @@
-# Disable to maybe fix ci
-# there is some error that says rules_java is missing
-# load("@aspect_bazel_lib//lib:docs.bzl", "stardoc_with_diff_test", "update_docs")
+load("@aspect_bazel_lib//lib:docs.bzl", "stardoc_with_diff_test", "update_docs")
 
-# stardoc_with_diff_test(
-#     name = "rules",
-#     bzl_library_target = "//compress:defs",
-# )
-#
-# update_docs()
+stardoc_with_diff_test(
+    name = "rules",
+    bzl_library_target = "//compress:defs",
+)
+
+update_docs()
