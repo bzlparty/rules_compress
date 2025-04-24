@@ -12,7 +12,7 @@ bzl_library(
     ],
 )
 
-S2_URL = "https://github.com/klauspost/compress/releases/download/v1.17.9"
+S2_URL = "https://github.com/klauspost/compress/releases/download/v1.18.0"
 
 multi_platform_assets(
     name = "s2",
@@ -32,7 +32,7 @@ multi_platform_assets(
     url = "%s/s2-{platform}.{ext}" % S2_URL,
 )
 
-ZIP_VERSION = "24.07"
+ZIP_VERSION = "24.09"
 
 ZIP_VERSION_INT = ZIP_VERSION.replace(".", "")
 

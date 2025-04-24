@@ -2,23 +2,23 @@
 
 ASSETS = {
     "darwin_amd64": struct(
-        url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-mac.tar.xz",
+        url = "https://github.com/ip7z/7zip/releases/download/24.09/7z2409-mac.tar.xz",
         binary = "7zz",
-        integrity = "sha384-xl0HW3pHOySG+NRdSnf/fhIDKpHlwjOC2dpqUOXYEXH2Ifh8jrg2FnjKz09W0F+G",
+        integrity = "sha384-VLl/hyKQ7PYpyC8MgXhkyge6yK/rR6IEP4fPKDuzNfTxbw090hesMU08GPuv8W6e",
     ),
     "darwin_arm64": struct(
-        url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-mac.tar.xz",
+        url = "https://github.com/ip7z/7zip/releases/download/24.09/7z2409-mac.tar.xz",
         binary = "7zz",
-        integrity = "sha384-xl0HW3pHOySG+NRdSnf/fhIDKpHlwjOC2dpqUOXYEXH2Ifh8jrg2FnjKz09W0F+G",
+        integrity = "sha384-VLl/hyKQ7PYpyC8MgXhkyge6yK/rR6IEP4fPKDuzNfTxbw090hesMU08GPuv8W6e",
     ),
     "linux_amd64": struct(
-        url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-linux-x64.tar.xz",
+        url = "https://github.com/ip7z/7zip/releases/download/24.09/7z2409-linux-x64.tar.xz",
         binary = "7zz",
-        integrity = "sha384-nsopQowWAMD63n2PE7NpPl+ySf6c1/l4oMrHMC+rXTS+NeIXik5Hsar253TSmHtq",
+        integrity = "sha384-dS5tzq92laaK96VmVONlJSDrZXset9/g8Egn7Kf99tC4CbbemiBAKytH/wWh290n",
     ),
     "linux_arm64": struct(
-        url = "https://github.com/ip7z/7zip/releases/download/24.07/7z2407-linux-arm64.tar.xz",
+        url = "https://github.com/ip7z/7zip/releases/download/24.09/7z2409-linux-arm64.tar.xz",
         binary = "7zz",
-        integrity = "sha384-VeJ8StL8Ra8anxxS70xVZaBxhb+tNJWo4mMcUVYEK09pfgFaVJdp5sA/D9+7O5IG",
+        integrity = "sha384-TBnkB4y+VvvvgULd2BMamCYlZKozxdlfCjl84SdK8bbLkJdCiFRKGAGQ1lW5Xeoo",
     ),
 }
