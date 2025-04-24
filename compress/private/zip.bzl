@@ -20,6 +20,7 @@ def _zip_impl(ctx):
     args.add("-bb0")
     args.add("-bso0")
     args.add("-mx%s" % ctx.attr.compression_level)
+    args.add("-w", ctx.files.srcs[0].path)
     args.add(ctx.outputs.out)
 
     for file in ctx.files.srcs:
