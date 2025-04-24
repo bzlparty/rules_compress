@@ -23,7 +23,7 @@ def _zip_impl(ctx):
     args.add(ctx.outputs.out)
 
     for file in ctx.files.srcs:
-        args.add_all(file)
+        args.add_all([file])
 
     ctx.actions.run(
         inputs = ctx.files.srcs,
